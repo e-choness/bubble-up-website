@@ -95,9 +95,24 @@
               class="icon major style1"
               style="border-radius: 10px; overflow: hidden; margin: 2em"
             >
+              <video
+                id="introVideo"
+                autoplay
+                loop
+                playsinline
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  display: block;
+                "
+              >
+                <source src="videos/trailer.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               <img
-                src="images/introduction/introduction.gif"
-                alt="Gameplay Combo"
+                src="images/introduction/gamecon-canada.png"
+                alt="GameCon Canada Logo"
                 style="
                   width: 100%;
                   height: 100%;
@@ -358,5 +373,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/video.js"></script>
   </body>
 </html>
