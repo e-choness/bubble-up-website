@@ -1,0 +1,25 @@
+title: "Stay In Touch"
+contact_info:
+  title: "Get In Touch"
+  items:
+    - icon: "📍"
+      title: "Address"
+      value: "{{ site.contact.address }}"
+      link: false
+    - icon: "📞"
+      title: "Phone"
+      value: "{{ site.contact.phone }}"
+      link: "tel:{{ site.contact.phone }}"
+    - icon: "✉️"
+      title: "Email"
+      value: "{{ site.contact.email }}"
+      link: "mailto:{{ site.contact.email }}"
+press_info:
+  title: "Press & Media"
+  description: "Looking for press materials, screenshots, or information about Bubble UP!? Download our comprehensive press kit with everything you need for coverage."
+  press_kit:
+    text: "📥 Download Press Kit"
+    link: "{{ site.contact.press_kit | relative_url }}"
+  media_contact:
+    label: "Media Contact:"
+    email: "press@bubbleupgame.com" 

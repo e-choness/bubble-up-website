@@ -1,0 +1,110 @@
+// About section styles
+.about-section {
+    background: white;
+    color: #333;
+    
+    .section-title {
+      color: $primary-color;
+    }
+    
+    .section-subtitle {
+      color: #666;
+    }
+  }
+  
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-2xl;
+    align-items: center;
+    
+    @include desktop-up {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .about-text {
+    h3 {
+      color: $primary-color;
+      font-size: $font-size-2xl;
+      margin-bottom: $spacing-lg;
+    }
+    
+    p {
+      font-size: $font-size-large;
+      line-height: 1.7;
+      margin-bottom: $spacing-md;
+      color: #555;
+    }
+  }
+  
+  .about-features {
+    list-style: none;
+    padding: 0;
+    margin-top: $spacing-lg;
+    
+    li {
+      display: flex;
+      align-items: center;
+      font-size: $font-size-large;
+      margin-bottom: $spacing-sm;
+      color: #555;
+      
+      &::before {
+        content: attr(data-icon);
+        margin-right: $spacing-sm;
+        font-size: $font-size-xl;
+      }
+    }
+  }
+  
+  .about-visual {
+    position: relative;
+  }
+  
+  .about-image-container {
+    position: relative;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    box-shadow: $shadow-xl;
+    
+    &:hover .about-image-overlay {
+      opacity: 1;
+    }
+  }
+  
+  .about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform $transition-slow;
+  }
+  
+  .about-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($primary-color, 0.8);
+    @include flex-center;
+    opacity: 0;
+    transition: opacity $transition-normal;
+    cursor: pointer;
+    
+    .play-button {
+      width: 80px;
+      height: 80px;
+      border-radius: $border-radius-full;
+      background: white;
+      color: $primary-color;
+      @include flex-center;
+      font-size: $font-size-2xl;
+      font-weight: bold;
+      transition: transform $transition-normal;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }

@@ -1,0 +1,90 @@
+// Announcements section styles
+.announcements-section {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  }
+  
+  .announcements-archive {
+    background: white;
+    min-height: 80vh;
+    padding: $spacing-2xl 0;
+    
+    .announcements-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 $container-padding;
+    }
+  }
+  
+  .announcement-card {
+    transition: all $transition-normal;
+    
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .announcement-image {
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.1));
+      }
+      
+      img {
+        transition: transform $transition-slow;
+      }
+    }
+    
+    &:hover .announcement-image img {
+      transform: scale(1.05);
+    }
+    
+    .announcement-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .announcement-title {
+      a {
+        display: block;
+        transition: color $transition-fast;
+        
+        &:hover {
+          color: $secondary-color;
+          text-decoration: none;
+        }
+      }
+    }
+    
+    .announcement-excerpt {
+      line-height: 1.6;
+    }
+    
+    .announcement-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: $spacing-md;
+      padding-top: $spacing-md;
+      border-top: 1px solid #eee;
+      
+      time {
+        color: $primary-color;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .announcements-cta {
+    background: rgba(white, 0.2);
+    padding: $spacing-xl;
+    border-radius: $border-radius-xl;
+    margin-top: $spacing-2xl;
+    backdrop-filter: blur(10px);
+  }

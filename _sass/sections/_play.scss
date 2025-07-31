@@ -1,0 +1,76 @@
+// Play section styles
+.play-section {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.download-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.download-btn {
+  background: rgba(white, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(white, 0.2);
+  
+  &:hover {
+    background: white;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  }
+  
+  .download-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: $border-radius-lg;
+    background: rgba($primary-color, 0.1);
+    margin-right: $spacing-md;
+    font-size: $font-size-2xl;
+    transition: all $transition-normal;
+  }
+  
+  &:hover .download-icon {
+    background: $primary-color;
+    transform: scale(1.1);
+  }
+  
+  .download-text {
+    .download-platform {
+      font-size: $font-size-xl;
+      font-weight: 600;
+      color: $primary-color;
+      transition: color $transition-normal;
+    }
+    
+    .download-subtitle {
+      font-size: $font-size-base;
+      color: #666;
+      font-weight: 400;
+    }
+  }
+  
+  // Platform-specific icon colors
+  &[data-platform="android"]:hover .download-icon { 
+    background: #34A853; 
+    color: white;
+  }
+  &[data-platform="ios"]:hover .download-icon { 
+    background: #007AFF; 
+    color: white;
+  }
+  &[data-platform="windows"]:hover .download-icon { 
+    background: #0078D4; 
+    color: white;
+  }
+  &[data-platform="mac"]:hover .download-icon { 
+    background: #000000; 
+    color: white;
+  }
+  &[data-platform="linux"]:hover .download-icon { 
+    background: #FCC624; 
+    color: #333;
+  }
+}

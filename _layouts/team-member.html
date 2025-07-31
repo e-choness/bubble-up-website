@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<main class="team-member-content">
+    <div class="container">
+        <div class="team-member-header">
+            <img src="{{ page.avatar | relative_url }}" alt="{{ page.name }}" class="team-member-avatar">
+            <div class="team-member-info">
+                <h1>{{ page.name }}</h1>
+                <p class="team-member-title">{{ page.title }}</p>
+                
+                {% if page.social %}
+                <div class="team-member-social">
+                    {% if page.social.linkedin %}
+                        <a href="{{ page.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+                    {% endif %}
+                    {% if page.social.twitter %}
+                        <a href="{{ page.social.twitter }}" target="_blank" rel="noopener">Twitter</a>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="team-member-bio">
+            {{ content }}
+        </div>
+    </div>
+</main>

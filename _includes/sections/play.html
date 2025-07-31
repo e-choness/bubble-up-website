@@ -1,0 +1,21 @@
+{% assign play = site.data.play %}
+<section class="play-section" id="play">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">{{ play.title }}</h2>
+            <p class="section-subtitle">{{ play.subtitle }}</p>
+        </div>
+        
+        <div class="download-grid">
+            {% for platform in play.platforms %}
+                <a href="{{ platform.link }}" class="download-btn" data-platform="{{ platform.data_platform }}">
+                    <div class="download-icon">{{ platform.icon }}</div>
+                    <div class="download-text">
+                        <span class="download-platform">{{ platform.platform }}</span>
+                        <span class="download-subtitle">{{ platform.subtitle }}</span>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

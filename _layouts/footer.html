@@ -1,0 +1,82 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Bubble UP!</h3>
+                <p>Pop your way to fun!</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    {% if site.social.linktree %}
+                        <a href="{{ site.social.linktree }}" target="_blank" rel="noopener" class="social-icon" data-platform="linktree">
+                            <span class="sr-only">Linktree</span>
+                            🔗
+                        </a>
+                    {% endif %}
+                    
+                    {% if site.social.steam %}
+                        <a href="{{ site.social.steam }}" target="_blank" rel="noopener" class="social-icon" data-platform="steam">
+                            <span class="sr-only">Steam</span>
+                            🎮
+                        </a>
+                    {% endif %}
+                    
+                    {% if site.social.instagram %}
+                        <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" class="social-icon" data-platform="instagram">
+                            <span class="sr-only">Instagram</span>
+                            📷
+                        </a>
+                    {% endif %}
+                    
+                    {% if site.social.youtube %}
+                        <a href="{{ site.social.youtube }}" target="_blank" rel="noopener" class="social-icon" data-platform="youtube">
+                            <span class="sr-only">YouTube</span>
+                            📺
+                        </a>
+                    {% endif %}
+                    
+                    {% if site.social.twitter %}
+                        <a href="{{ site.social.twitter }}" target="_blank" rel="noopener" class="social-icon" data-platform="twitter">
+                            <span class="sr-only">Twitter</span>
+                            🐦
+                        </a>
+                    {% endif %}
+                    
+                    {% if site.social.discord %}
+                        <a href="{{ site.social.discord }}" target="_blank" rel="noopener" class="social-icon" data-platform="discord">
+                            <span class="sr-only">Discord</span>
+                            💬
+                        </a>
+                    {% endif %}
+                    
+                    {% if site.social.linkedin %}
+                        <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" class="social-icon" data-platform="linkedin">
+                            <span class="sr-only">LinkedIn</span>
+                            💼
+                        </a>
+                    {% endif %}
+                    
+                    {% if site.social.patreon %}
+                        <a href="{{ site.social.patreon }}" target="_blank" rel="noopener" class="social-icon" data-platform="patreon">
+                            <span class="sr-only">Patreon</span>
+                            🎨
+                        </a>
+                    {% endif %}
+                    
+                    {% if site.social.bluesky %}
+                        <a href="{{ site.social.bluesky }}" target="_blank" rel="noopener" class="social-icon" data-platform="bluesky">
+                            <span class="sr-only">Bluesky</span>
+                            🦋
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

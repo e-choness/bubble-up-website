@@ -1,0 +1,88 @@
+# Site settings
+title: Bubble UP!
+email: contact@bubbleupgame.com
+description: >-
+  The fun, addictive bubble-popping game that brings joy to players worldwide.
+  Available on all platforms!
+baseurl: ""
+url: "https://bubbleupgame.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Sass configuration
+sass:
+  style: compressed
+  load_paths:
+    - _sass
+  quiet_deps: true
+  quiet: true
+  sass_dir: _sass
+
+# Collections
+collections:
+  announcements:
+    output: true
+    permalink: /announcements/:slug/
+  team:
+    output: true
+    permalink: /team/:slug/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "announcements"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "team"
+    values:
+      layout: "team-member"
+
+# Custom settings
+social:
+  linktree: "https://linktr.ee/bubbleup"
+  steam: "https://store.steampowered.com/app/bubbleup"
+  instagram: "https://instagram.com/bubbleupgame"
+  youtube: "https://youtube.com/@bubbleupgame"
+  twitter: "https://twitter.com/bubbleupgame"
+  discord: "https://discord.gg/bubbleup"
+  linkedin: "https://linkedin.com/company/bubbleup"
+  patreon: "https://patreon.com/bubbleup"
+  bluesky: "https://bsky.app/profile/bubbleup.game"
+
+download_links:
+  android: "https://play.google.com/store/apps/details?id=com.bubbleup"
+  ios: "https://apps.apple.com/app/bubble-up/id123456789"
+  windows: "https://github.com/bubbleup/releases/latest/download/BubbleUp-Windows.exe"
+  mac: "https://github.com/bubbleup/releases/latest/download/BubbleUp-Mac.dmg"
+  linux: "https://github.com/bubbleup/releases/latest/download/BubbleUp-Linux.AppImage"
+
+contact:
+  address: "123 Game Street, Fun City, FC 12345"
+  phone: "+1 (555) 123-GAME"
+  email: "contact@bubbleupgame.com"
+  press_kit: "/assets/files/BubbleUp-PressKit.zip"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

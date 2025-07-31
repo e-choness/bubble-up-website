@@ -1,0 +1,6 @@
+title: "Latest News"
+subtitle: "Stay updated with our latest announcements"
+limit: 6
+cta:
+  text: "View All Announcements"
+  link: "/announcements/" 

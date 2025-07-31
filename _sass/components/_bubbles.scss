@@ -1,0 +1,98 @@
+// Bubble components and animations
+.bubble-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .bubble {
+    position: absolute;
+    border-radius: $border-radius-full;
+    background: $gradient-bubble;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(white, 0.3);
+    
+    // Bubble 1
+    &.bubble-1 {
+      width: 80px;
+      height: 80px;
+      top: 20%;
+      left: 10%;
+      @include bubble-float(4s, 0s);
+    }
+    
+    // Bubble 2
+    &.bubble-2 {
+      width: 120px;
+      height: 120px;
+      top: 60%;
+      left: 80%;
+      @include bubble-float(5s, 1s);
+    }
+    
+    // Bubble 3
+    &.bubble-3 {
+      width: 60px;
+      height: 60px;
+      top: 80%;
+      left: 20%;
+      @include bubble-float(3s, 2s);
+    }
+    
+    // Bubble 4
+    &.bubble-4 {
+      width: 100px;
+      height: 100px;
+      top: 10%;
+      left: 70%;
+      @include bubble-float(6s, 0.5s);
+    }
+    
+    // Bubble 5
+    &.bubble-5 {
+      width: 40px;
+      height: 40px;
+      top: 40%;
+      left: 50%;
+      @include bubble-float(3.5s, 1.5s);
+    }
+    
+    // Bubble 6
+    &.bubble-6 {
+      width: 90px;
+      height: 90px;
+      top: 70%;
+      left: 60%;
+      @include bubble-float(4.5s, 2.5s);
+    }
+  }
+  
+  // Bubble popping effect (for interactive elements)
+  .bubble-pop {
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: $border-radius-full;
+      background: radial-gradient(circle, rgba($primary-color, 0.3), transparent);
+      transform: translate(-50%, -50%);
+      transition: all $transition-fast;
+      z-index: -1;
+    }
+    
+    &:hover::before {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+    }
+  }

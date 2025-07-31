@@ -1,0 +1,37 @@
+{% assign about = site.data.about %}
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">{{ about.title }}</h2>
+            {% if about.subtitle %}
+                <p class="section-subtitle">{{ about.subtitle }}</p>
+            {% endif %}
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <h3>{{ about.heading }}</h3>
+                {% for paragraph in about.description %}
+                    <p>{{ paragraph }}</p>
+                {% endfor %}
+                
+                <ul class="about-features">
+                    {% for feature in about.features %}
+                        <li data-icon="{{ feature.icon }}">{{ feature.text }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="about-visual">
+                <div class="about-image-container">
+                    <img src="{{ about.image.src | relative_url }}" 
+                         alt="{{ about.image.alt }}" 
+                         class="about-image">
+                    <div class="about-image-overlay">
+                        <div class="play-button">▶</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
