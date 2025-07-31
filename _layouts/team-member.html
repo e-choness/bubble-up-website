@@ -2,29 +2,55 @@
 layout: default
 ---
 
-<main class="team-member-content">
+<article class="team-member-page">
     <div class="container">
         <div class="team-member-header">
-            <img src="{{ page.avatar | relative_url }}" alt="{{ page.name }}" class="team-member-avatar">
+            <div class="team-member-avatar">
+                {% if page.avatar %}
+                    <img src="{{ page.avatar | relative_url }}" 
+                         alt="{{ page.name }}" 
+                         class="member-avatar">
+                {% else %}
+                    <img src="https://via.placeholder.com/300x300/4A90E2/FFFFFF?text={{ page.name | url_encode }}" 
+                         alt="{{ page.name }}" 
+                         class="member-avatar">
+                {% endif %}
+            </div>
+            
             <div class="team-member-info">
-                <h1>{{ page.name }}</h1>
-                <p class="team-member-title">{{ page.title }}</p>
+                <h1 class="member-name">{{ page.name }}</h1>
+                <p class="member-title">{{ page.title }}</p>
                 
                 {% if page.social %}
-                <div class="team-member-social">
-                    {% if page.social.linkedin %}
-                        <a href="{{ page.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
-                    {% endif %}
-                    {% if page.social.twitter %}
-                        <a href="{{ page.social.twitter }}" target="_blank" rel="noopener">Twitter</a>
-                    {% endif %}
-                </div>
+                    <div class="member-social">
+                        {% if page.social.linkedin %}
+                            <a href="{{ page.social.linkedin }}" target="_blank" rel="noopener" class="social-icon" data-platform="linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        {% endif %}
+                        {% if page.social.twitter %}
+                            <a href="{{ page.social.twitter }}" target="_blank" rel="noopener" class="social-icon" data-platform="twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        {% endif %}
+                        {% if page.social.github %}
+                            <a href="{{ page.social.github }}" target="_blank" rel="noopener" class="social-icon" data-platform="github">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        {% endif %}
+                    </div>
                 {% endif %}
             </div>
         </div>
         
-        <div class="team-member-bio">
+        <div class="team-member-content">
             {{ content }}
         </div>
+        
+        <div class="team-member-actions">
+            <a href="{{ '/' | relative_url }}#team" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Team
+            </a>
+        </div>
     </div>
-</main>
+</article>

@@ -22,76 +22,194 @@
   }
   
   .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: $spacing-xl;
     
-    @include tablet-up {
+    @media (min-width: #{$breakpoint-sm}) {
+      grid-template-columns: repeat(2, 1fr);
       gap: $spacing-lg;
+    }
+    
+    @media (min-width: #{$breakpoint-md}) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-lg;
+    }
+    
+    @media (min-width: #{$breakpoint-lg}) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-xl;
     }
   }
   
   .team-card {
-    background: rgba(white, 0.95);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(white, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all $transition-normal;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+    
+    // Different background colors for each card - lighter and softer
+    &[data-member="1"] {
+      background: linear-gradient(135deg, rgba(74, 144, 226, 0.15), rgba(123, 104, 238, 0.15));
+      border: 1px solid rgba(74, 144, 226, 0.2);
+      
+      &:hover {
+        background: linear-gradient(135deg, rgba(74, 144, 226, 0.25), rgba(123, 104, 238, 0.25));
+        border-color: rgba(74, 144, 226, 0.3);
+      }
+    }
+    
+    &[data-member="2"] {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 142, 142, 0.15));
+      border: 1px solid rgba(255, 107, 107, 0.2);
+      
+      &:hover {
+        background: linear-gradient(135deg, rgba(255, 107, 107, 0.25), rgba(255, 142, 142, 0.25));
+        border-color: rgba(255, 107, 107, 0.3);
+      }
+    }
+    
+    &[data-member="3"] {
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(46, 213, 115, 0.15));
+      border: 1px solid rgba(78, 205, 196, 0.2);
+      
+      &:hover {
+        background: linear-gradient(135deg, rgba(78, 205, 196, 0.25), rgba(46, 213, 115, 0.25));
+        border-color: rgba(78, 205, 196, 0.3);
+      }
+    }
+    
+    &[data-member="4"] {
+      background: linear-gradient(135deg, rgba(255, 230, 109, 0.15), rgba(255, 193, 7, 0.15));
+      border: 1px solid rgba(255, 230, 109, 0.2);
+      
+      &:hover {
+        background: linear-gradient(135deg, rgba(255, 230, 109, 0.25), rgba(255, 193, 7, 0.25));
+        border-color: rgba(255, 230, 109, 0.3);
+      }
+    }
+    
+    &[data-member="5"] {
+      background: linear-gradient(135deg, rgba(156, 39, 176, 0.15), rgba(233, 30, 99, 0.15));
+      border: 1px solid rgba(156, 39, 176, 0.2);
+      
+      &:hover {
+        background: linear-gradient(135deg, rgba(156, 39, 176, 0.25), rgba(233, 30, 99, 0.25));
+        border-color: rgba(156, 39, 176, 0.3);
+      }
+    }
+    
+    &[data-member="6"] {
+      background: linear-gradient(135deg, rgba(255, 152, 0, 0.15), rgba(255, 87, 34, 0.15));
+      border: 1px solid rgba(255, 152, 0, 0.2);
+      
+      &:hover {
+        background: linear-gradient(135deg, rgba(255, 152, 0, 0.25), rgba(255, 87, 34, 0.25));
+        border-color: rgba(255, 152, 0, 0.3);
+      }
+    }
     
     &:hover {
-      background: white;
       transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    &.team-card-link {
+      cursor: pointer;
+      
+      &:hover .team-avatar img {
+        transform: scale(1.1);
+      }
     }
     
     .team-avatar {
       position: relative;
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: -4px;
-        left: -4px;
-        right: -4px;
-        bottom: -4px;
-        border-radius: $border-radius-full;
-        background: $gradient-primary;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity $transition-normal;
-      }
+      padding: $spacing-lg;
+      text-align: center;
       
       img {
-        transition: transform $transition-normal;
-        border: 4px solid white;
-        box-shadow: $shadow-md;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        transition: all $transition-normal;
+        background: rgba(255, 255, 255, 0.1);
       }
     }
     
-    &:hover .team-avatar {
-      &::before {
-        opacity: 1;
-      }
-      
-      img {
-        transform: scale(1.05);
-      }
+    &:hover .team-avatar img {
+      transform: scale(1.05);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    }
+    
+    .team-info {
+      padding: $spacing-lg;
+      text-align: center;
     }
     
     .team-name {
-      background: $gradient-primary;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: $primary-color;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .team-title {
+      color: #666;
+      font-size: 1rem;
+      margin-bottom: $spacing-lg;
+      font-weight: 400;
     }
     
     .team-social {
+      display: flex;
+      justify-content: center;
+      gap: $spacing-sm;
+      
       a {
-        background: rgba($primary-color, 0.1);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(74, 144, 226, 0.1);
         color: $primary-color;
-        border: 1px solid rgba($primary-color, 0.2);
+        text-decoration: none;
+        font-size: 1rem;
+        transition: all $transition-normal;
+        border: 1px solid rgba(74, 144, 226, 0.2);
+        backdrop-filter: blur(10px);
         
         &:hover {
-          background: $primary-color;
-          color: white;
-          border-color: $primary-color;
+          background: rgba(74, 144, 226, 0.2);
+          transform: translateY(-2px) scale(1.1);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        // Platform-specific hover colors
+        &[data-platform="linkedin"]:hover {
+          background: #0077b5;
+          border-color: #0077b5;
+        }
+        
+        &[data-platform="twitter"]:hover {
+          background: #1da1f2;
+          border-color: #1da1f2;
+        }
+        
+        &[data-platform="github"]:hover {
+          background: #333;
+          border-color: #333;
         }
       }
     }

@@ -1,19 +1,18 @@
-{% assign announcements = site.data.announcements %}
-<section class="announcements-section" id="announcements">
+<section class="announcements-archive">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">{{ announcements.title }}</h2>
-            <p class="section-subtitle">{{ announcements.subtitle }}</p>
+            <h1 class="section-title">All Announcements</h1>
+            <p class="section-subtitle">Stay updated with all the latest news and updates from Bubble UP!</p>
         </div>
         
         <div class="announcements-grid">
             {% assign sorted_announcements = site.announcements | sort: 'date' | reverse %}
-            {% for announcement in sorted_announcements limit: 3 %}
+            {% for announcement in sorted_announcements %}
                 <article class="announcement-card">
                     <div class="announcement-image">
                         {% if announcement.image %}
                             <img src="{{ announcement.image | relative_url }}" 
-                                 alt="{{ announcement.title }}"
+                                 alt="{{ announcement.title }}" 
                                  loading="lazy">
                         {% else %}
                             <img src="https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=Announcement" 
@@ -23,14 +22,12 @@
                     
                     <div class="announcement-content">
                         <h3 class="announcement-title">
-                            <a href="{{ announcement.url | relative_url }}">
-                                {{ announcement.title }}
-                            </a>
+                            <a href="{{ announcement.url | relative_url }}">{{ announcement.title }}</a>
                         </h3>
                         
-                        <p class="announcement-excerpt">
-                            {{ announcement.excerpt | strip_html | truncate: 120 }}
-                        </p>
+                        {% if announcement.excerpt %}
+                            <p class="announcement-excerpt">{{ announcement.excerpt }}</p>
+                        {% endif %}
                         
                         <div class="announcement-meta">
                             <time datetime="{{ announcement.date | date_to_xmlschema }}">
@@ -45,8 +42,14 @@
             {% endfor %}
         </div>
         
-        <div class="announcements-cta">
-            <a href="{{ announcements.cta.link }}" class="btn btn-secondary">{{ announcements.cta.text }}</a>
-        </div>
+        {% if sorted_announcements.size == 0 %}
+            <div class="no-announcements">
+                <div class="no-announcements-content">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>No Announcements Yet</h3>
+                    <p>Check back soon for exciting updates and news!</p>
+                </div>
+            </div>
+        {% endif %}
     </div>
-</section>
+</section> 

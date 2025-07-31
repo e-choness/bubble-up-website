@@ -63,7 +63,7 @@ On individual pages (like announcements), the navigation shows:
 
 - **Back to Home** - Returns to homepage
 - **All News** - Goes to announcements archive
-- **Team** - Goes to team page
+- **Team** - Goes to main page team section
 - **Contact** - Goes to contact section on homepage
 
 ## 🔧 Customization
