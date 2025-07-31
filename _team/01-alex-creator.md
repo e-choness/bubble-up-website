@@ -1,6 +1,6 @@
 ---
-name: "Alex Johnson"
-title: "Creative Director"
+name: "Roger Hatfull"
+title: "Lead Gameplay Engineer"
 avatar: "/assets/images/team/alex.jpg"
 social:
   linkedin: "https://linkedin.com/in/alexjohnson"

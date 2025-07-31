@@ -7,6 +7,6 @@ intro:
     alt: "Bubble UP! Team Photo"
     class: "team-group-photo"
 social_icons:
-  linkedin: "💼"
-  twitter: "🐦"
-  github: "💻" 
+  linkedin: "<i class=\"fab fa-linkedin\"></i>"
+  twitter: "<i class=\"fab fa-twitter\"></i>"
+  github: "<i class=\"fab fa-github\"></i>" 

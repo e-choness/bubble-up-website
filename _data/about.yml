@@ -14,5 +14,5 @@ features:
   - icon: "👥"
     text: "Multiplayer challenges"
 image:
-  src: "/assets/images/about-game-screenshot.jpg"
+  src: "assets/images/about-game-screenshot.gif"
   alt: "Bubble UP! gameplay screenshot" 
