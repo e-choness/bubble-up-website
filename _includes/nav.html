@@ -1,0 +1,62 @@
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <!-- Logo/Brand -->
+        <div class="nav-brand">
+            <a href="{{ '/' | relative_url }}" class="nav-logo">
+                <span class="nav-logo-text">Bubble UP!</span>
+            </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+                {% if page.url == '/' or page.url == '/index.html' %}
+                    <!-- Main page navigation -->
+                    <li class="nav-item">
+                        <a href="#hero" class="nav-link" data-section="hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link" data-section="about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#play" class="nav-link" data-section="play">Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#announcements" class="nav-link" data-section="announcements">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#showcase" class="nav-link" data-section="showcase">Showcase</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link" data-section="team">Team</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                    </li>
+                {% else %}
+                    <!-- Sub-page navigation -->
+                    <li class="nav-item">
+                        <a href="{{ '/' | relative_url }}" class="nav-link">Back to Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ '/announcements/' | relative_url }}" class="nav-link">All News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ '/team/' | relative_url }}" class="nav-link">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ '/' | relative_url }}#contact" class="nav-link">Contact</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav> 

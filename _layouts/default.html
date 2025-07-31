@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    {% include nav.html %}
     <div class="page-wrapper">
         {{ content }}
         
@@ -14,5 +15,6 @@
     
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/navbar.js' | relative_url }}"></script>
 </body>
 </html>
