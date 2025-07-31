@@ -4,16 +4,16 @@ contact_info:
   items:
     - icon: "📍"
       title: "Address"
-      value: "{{ site.contact.address }}"
+      value: "blah"
       link: false
     - icon: "📞"
       title: "Phone"
-      value: "{{ site.contact.phone }}"
-      link: "tel:{{ site.contact.phone }}"
+      value: "blah blah"
+      link: "tel: blah"
     - icon: "✉️"
       title: "Email"
-      value: "{{ site.contact.email }}"
-      link: "mailto:{{ site.contact.email }}"
+      value: "blah"
+      link: "mailto:blah"
 press_info:
   title: "Press & Media"
   description: "Looking for press materials, screenshots, or information about Bubble UP!? Download our comprehensive press kit with everything you need for coverage."

@@ -1,23 +1,19 @@
+{% assign team = site.data.team %}
 <section class="team-section" id="team">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Meet The Team</h2>
+            <h2 class="section-title">{{ team.title }}</h2>
         </div>
         
         <div class="team-intro">
             <div class="team-intro-content">
-                <h3>The Bubble Creators</h3>
-                <p>
-                    We're a passionate team of developers, designers, and dreamers 
-                    who believe that games should bring joy, wonder, and connection 
-                    to people's lives. Every bubble popped, every level designed, 
-                    and every smile created comes from our shared love of gaming magic.
-                </p>
+                <h3>{{ team.intro.heading }}</h3>
+                <p>{{ team.intro.description }}</p>
             </div>
             <div class="team-intro-image">
-                <img src="{{ '/assets/images/team-photo.jpg' | relative_url }}" 
-                     alt="Bubble UP! Team Photo" 
-                     class="team-group-photo">
+                <img src="{{ team.intro.image.src | relative_url }}" 
+                     alt="{{ team.intro.image.alt }}" 
+                     class="{{ team.intro.image.class }}">
             </div>
         </div>
         
@@ -36,13 +32,13 @@
                         {% if member.social %}
                             <div class="team-social">
                                 {% if member.social.linkedin %}
-                                    <a href="{{ member.social.linkedin }}" target="_blank" rel="noopener">💼</a>
+                                    <a href="{{ member.social.linkedin }}" target="_blank" rel="noopener">{{ team.social_icons.linkedin }}</a>
                                 {% endif %}
                                 {% if member.social.twitter %}
-                                    <a href="{{ member.social.twitter }}" target="_blank" rel="noopener">🐦</a>
+                                    <a href="{{ member.social.twitter }}" target="_blank" rel="noopener">{{ team.social_icons.twitter }}</a>
                                 {% endif %}
                                 {% if member.social.github %}
-                                    <a href="{{ member.social.github }}" target="_blank" rel="noopener">💻</a>
+                                    <a href="{{ member.social.github }}" target="_blank" rel="noopener">{{ team.social_icons.github }}</a>
                                 {% endif %}
                             </div>
                         {% endif %}

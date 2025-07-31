@@ -3,7 +3,7 @@ intro:
   heading: "The Bubble Creators"
   description: "We're a passionate team of developers, designers, and dreamers who believe that games should bring joy, wonder, and connection to people's lives. Every bubble popped, every level designed, and every smile created comes from our shared love of gaming magic."
   image:
-    src: "/assets/images/team-photo.jpg"
+    src: "assets/images/team/team-photo.png"
     alt: "Bubble UP! Team Photo"
     class: "team-group-photo"
 social_icons:

@@ -1,6 +1,6 @@
-# Bubble UP! Jekyll Theme
+# Bubble UP! Website
 
-A playful, animated Jekyll theme designed for the Bubble UP! game website. Features modern animations, responsive design, and a bubbly aesthetic that brings joy to visitors.
+A playful, animated Website designed for the Bubble UP! game website. Features modern animations, responsive design, and a bubbly aesthetic that brings joy to visitors.
 
 ## 🚀 Features
 

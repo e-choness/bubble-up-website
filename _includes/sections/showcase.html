@@ -1,58 +1,26 @@
+{% assign showcase = site.data.showcase %}
 <section class="showcase-section" id="showcase">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Gameplay Showcase</h2>
-            <p class="section-subtitle">Experience the magic in action</p>
+            <h2 class="section-title">{{ showcase.title }}</h2>
+            <p class="section-subtitle">{{ showcase.subtitle }}</p>
         </div>
         
         <div class="showcase-grid">
-            <div class="showcase-item">
-                <div class="showcase-media">
-                    <img src="{{ '/assets/images/showcase-bubbles.gif' | relative_url }}" 
-                         alt="Bubble popping mechanics" 
-                         class="showcase-gif"
-                         loading="lazy">
+            {% for item in showcase.items %}
+                <div class="showcase-item{% if item.reverse %} showcase-reverse{% endif %}">
+                    <div class="showcase-media">
+                        <img src="{{ item.image.src | relative_url }}" 
+                             alt="{{ item.image.alt }}" 
+                             class="{{ item.image.class }}"
+                             loading="lazy">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                    </div>
                 </div>
-                <div class="showcase-content">
-                    <h3>Satisfying Bubble Physics</h3>
-                    <p>
-                        Watch bubbles react with realistic physics as they bounce, 
-                        merge, and pop in spectacular chain reactions!
-                    </p>
-                </div>
-            </div>
-            
-            <div class="showcase-item showcase-reverse">
-                <div class="showcase-media">
-                    <img src="{{ '/assets/images/showcase-powerups.gif' | relative_url }}" 
-                         alt="Power-ups and special effects" 
-                         class="showcase-gif"
-                         loading="lazy">
-                </div>
-                <div class="showcase-content">
-                    <h3>Explosive Power-ups</h3>
-                    <p>
-                        Unlock amazing power-ups that create dazzling effects 
-                        and help you clear even the trickiest levels!
-                    </p>
-                </div>
-            </div>
-            
-            <div class="showcase-item">
-                <div class="showcase-media">
-                    <img src="{{ '/assets/images/showcase-levels.gif' | relative_url }}" 
-                         alt="Various game levels" 
-                         class="showcase-gif"
-                         loading="lazy">
-                </div>
-                <div class="showcase-content">
-                    <h3>Endless Variety</h3>
-                    <p>
-                        Explore hundreds of handcrafted levels, each with unique 
-                        challenges, themes, and surprises waiting to be discovered!
-                    </p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

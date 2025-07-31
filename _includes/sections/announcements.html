@@ -1,12 +1,13 @@
+{% assign announcements = site.data.announcements %}
 <section class="announcements-section" id="announcements">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Latest News</h2>
-            <p class="section-subtitle">Stay updated with our latest announcements</p>
+            <h2 class="section-title">{{ announcements.title }}</h2>
+            <p class="section-subtitle">{{ announcements.subtitle }}</p>
         </div>
         
         <div class="announcements-grid">
-            {% for announcement in site.announcements limit:6 %}
+            {% for announcement in site.announcements limit:announcements.limit %}
                 <article class="announcement-card">
                     {% if announcement.image %}
                         <div class="announcement-image">
@@ -38,7 +39,7 @@
         </div>
         
         <div class="announcements-cta">
-            <a href="/announcements/" class="btn btn-secondary">View All Announcements</a>
+            <a href="{{ announcements.cta.link }}" class="btn btn-secondary">{{ announcements.cta.text }}</a>
         </div>
     </div>
 </section>

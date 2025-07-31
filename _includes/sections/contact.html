@@ -1,62 +1,47 @@
+{% assign contact = site.data.contact %}
 <section class="contact-section" id="contact">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Stay In Touch</h2>
+            <h2 class="section-title">{{ contact.title }}</h2>
         </div>
         
         <div class="contact-grid">
             <div class="contact-info">
-                <h3>Get In Touch</h3>
+                <h3>{{ contact.contact_info.title }}</h3>
                 
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-details">
-                        <h4>Address</h4>
-                        <p>{{ site.contact.address }}</p>
+                {% for item in contact.contact_info.items %}
+                    <div class="contact-item">
+                        <div class="contact-icon">{{ item.icon }}</div>
+                        <div class="contact-details">
+                            <h4>{{ item.title }}</h4>
+                            <p>
+                                {% if item.link %}
+                                    <a href="{{ item.link }}">{{ item.value }}</a>
+                                {% else %}
+                                    {{ item.value }}
+                                {% endif %}
+                            </p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <div class="contact-details">
-                        <h4>Phone</h4>
-                        <p>
-                            <a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a>
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">✉️</div>
-                    <div class="contact-details">
-                        <h4>Email</h4>
-                        <p>
-                            <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
-                        </p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             
             <div class="press-info">
-                <h3>Press & Media</h3>
-                <p>
-                    Looking for press materials, screenshots, or information about 
-                    Bubble UP!? Download our comprehensive press kit with everything 
-                    you need for coverage.
-                </p>
+                <h3>{{ contact.press_info.title }}</h3>
+                <p>{{ contact.press_info.description }}</p>
                 
                 <div class="press-kit-download">
-                    <a href="{{ site.contact.press_kit | relative_url }}" 
+                    <a href="{{ contact.press_info.press_kit.link | relative_url }}" 
                        class="btn btn-primary" 
                        download>
-                        📥 Download Press Kit
+                        {{ contact.press_info.press_kit.text }}
                     </a>
                 </div>
                 
                 <div class="press-contact">
                     <p>
-                        <strong>Media Contact:</strong><br>
-                        <a href="mailto:press@bubbleupgame.com">press@bubbleupgame.com</a>
+                        <strong>{{ contact.press_info.media_contact.label }}</strong><br>
+                        <a href="mailto:{{ contact.press_info.media_contact.email }}">{{ contact.press_info.media_contact.email }}</a>
                     </p>
                 </div>
             </div>
