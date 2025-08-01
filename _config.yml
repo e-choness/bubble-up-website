@@ -6,6 +6,7 @@ description: >-
   Available on all platforms!
 baseurl: ""
 url: "https://bubbleupgame.com"
+favicon: "assets/images/favicon.ico"
 
 # Build settings
 markdown: kramdown
