@@ -23,22 +23,18 @@
   
   .team-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-xl;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-md;
+    justify-content: space-between;
     
-    @media (min-width: #{$breakpoint-sm}) {
+    @media (max-width: #{$breakpoint-md}) {
       grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-lg;
+      gap: $spacing-md;
     }
     
-    @media (min-width: #{$breakpoint-md}) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: $spacing-lg;
-    }
-    
-    @media (min-width: #{$breakpoint-lg}) {
-      grid-template-columns: repeat(4, 1fr);
-      gap: $spacing-xl;
+    @media (max-width: #{$breakpoint-sm}) {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
     }
   }
   
@@ -51,6 +47,7 @@
     display: block;
     border-radius: $border-radius-xl;
     overflow: hidden;
+    position: relative;
     
     // Different background colors for each card - lighter and softer
     &[data-member="1"] {
@@ -120,7 +117,10 @@
       color: inherit;
     }
     
-    &.team-card-link {
+    .team-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
       cursor: pointer;
       
       &:hover .team-avatar img {
@@ -130,16 +130,16 @@
     
     .team-avatar {
       position: relative;
-      padding: $spacing-lg;
+      padding: $spacing-md;
       text-align: center;
       
       img {
-        width: 120px;
-        height: 120px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         transition: all $transition-normal;
         background: rgba(255, 255, 255, 0.1);
       }
@@ -152,43 +152,54 @@
     }
     
     .team-info {
-      padding: $spacing-lg;
+      padding: $spacing-md;
       text-align: center;
     }
     
     .team-name {
       color: $primary-color;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: $spacing-sm;
+      margin-bottom: $spacing-xs;
     }
     
     .team-title {
       color: #666;
-      font-size: 1rem;
-      margin-bottom: $spacing-lg;
+      font-size: 0.9rem;
+      margin-bottom: $spacing-md;
       font-weight: 400;
     }
     
     .team-social {
       display: flex;
       justify-content: center;
-      gap: $spacing-sm;
+      gap: $spacing-xs;
+      position: relative;
+      z-index: 2;
+      padding: $spacing-sm $spacing-md $spacing-md;
+      margin-top: $spacing-xs;
+      
+      @media (max-width: #{$breakpoint-md}) {
+        padding: $spacing-xs $spacing-sm $spacing-sm;
+        margin-top: $spacing-xs;
+      }
       
       a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
         background: rgba(74, 144, 226, 0.1);
         color: $primary-color;
         text-decoration: none;
-        font-size: 1rem;
+        font-size: 0.9rem;
         transition: all $transition-normal;
         border: 1px solid rgba(74, 144, 226, 0.2);
         backdrop-filter: blur(10px);
+        position: relative;
+        z-index: 3;
         
         &:hover {
           background: rgba(74, 144, 226, 0.2);

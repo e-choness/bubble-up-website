@@ -4,46 +4,48 @@
         <div class="section-header">
             <h2 class="section-title">{{ team.title }}</h2>
         </div>
-        
+
         <div class="team-intro">
             <div class="team-intro-content">
                 <h3>{{ team.intro.heading }}</h3>
                 <p>{{ team.intro.description }}</p>
             </div>
             <div class="team-intro-image">
-                <img src="{{ team.intro.image.src | relative_url }}" 
-                     alt="{{ team.intro.image.alt }}" 
-                     class="{{ team.intro.image.class }}">
+                <img src="{{ team.intro.image.src | relative_url }}" alt="{{ team.intro.image.alt }}"
+                    class="{{ team.intro.image.class }}">
             </div>
         </div>
-        
+
         <div class="team-grid">
             {% for member in site.team %}
-                <div class="team-card">
+            <div class="team-card">
+                <a href="{{ member.url | relative_url }}" class="team-card-link">
                     <div class="team-avatar">
-                        <img src="{{ member.avatar | relative_url }}" 
-                             alt="{{ member.name }}"
-                             loading="lazy">
+                        <img src="{{ member.avatar | relative_url }}" alt="{{ member.name }}" loading="lazy">
                     </div>
                     <div class="team-info">
                         <h4 class="team-name">{{ member.name }}</h4>
                         <p class="team-title">{{ member.title }}</p>
-                        
-                        {% if member.social %}
-                            <div class="team-social">
-                                {% if member.social.linkedin %}
-                                    <a href="{{ member.social.linkedin }}" target="_blank" rel="noopener" class="social-icon" data-platform="linkedin">{{ team.social_icons.linkedin | safe }}</a>
-                                {% endif %}
-                                {% if member.social.twitter %}
-                                    <a href="{{ member.social.twitter }}" target="_blank" rel="noopener" class="social-icon" data-platform="twitter">{{ team.social_icons.twitter | safe }}</a>
-                                {% endif %}
-                                {% if member.social.github %}
-                                    <a href="{{ member.social.github }}" target="_blank" rel="noopener" class="social-icon" data-platform="github">{{ team.social_icons.github | safe }}</a>
-                                {% endif %}
-                            </div>
-                        {% endif %}
                     </div>
+                </a>
+
+                {% if member.social %}
+                <div class="team-social">
+                    {% if member.social.linkedin %}
+                    <a href="{{ member.social.linkedin }}" target="_blank" rel="noopener" class="social-icon"
+                        data-platform="linkedin">{{ team.social_icons.linkedin | safe }}</a>
+                    {% endif %}
+                    {% if member.social.twitter %}
+                    <a href="{{ member.social.twitter }}" target="_blank" rel="noopener" class="social-icon"
+                        data-platform="twitter">{{ team.social_icons.twitter | safe }}</a>
+                    {% endif %}
+                    {% if member.social.github %}
+                    <a href="{{ member.social.github }}" target="_blank" rel="noopener" class="social-icon"
+                        data-platform="github">{{ team.social_icons.github | safe }}</a>
+                    {% endif %}
                 </div>
+                {% endif %}
+            </div>
             {% endfor %}
         </div>
     </div>
