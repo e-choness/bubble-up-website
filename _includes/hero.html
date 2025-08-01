@@ -10,10 +10,10 @@
     
     <div class="hero-content">
         <h1 class="hero-title">
-            <span class="hero-title-line">Welcome to</span>
-            <span class="hero-title-main">Bubble UP!</span>
-        </h1>
-        <p class="hero-tagline">Pop your way to endless fun and excitement!</p>
+            <span class="hero-title-line">{{ hero.title.line }}</span>
+            <img src="{{ site.baseurl }}{{hero.title.image}}" alt="{{ hero.title.main }}" class="logo">
+          </h1>
+          <p class="hero-tagline">{{ site.data.hero.tagline }}</p>
         
         <div class="hero-cta">
             <a href="#play" class="btn btn-primary btn-large">

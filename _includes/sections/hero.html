@@ -9,7 +9,8 @@
     <div class="hero-content">
         <h1 class="hero-title">
             <span class="hero-title-line">{{ hero.title.line }}</span>
-            <span class="hero-title-main">{{ hero.title.main }}</span>
+            <!-- <span class="hero-title-main">{{ hero.title.main }}</span> -->
+            <img src="{{ site.baseurl }}{{hero.title.image}}" alt="{{ hero.title.main }}" class="logo">
         </h1>
         <p class="hero-tagline">{{ hero.tagline }}</p>
         

@@ -1,5 +1,18 @@
 // Animation components and keyframes
 
+.logo {
+  animation: pop-up 2s infinite;
+}
+
+@keyframes pop-up {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
 // Keyframe animations
 @keyframes bubbleFloat {
     0% {

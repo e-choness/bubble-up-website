@@ -1,6 +1,7 @@
 title:
   line: "Welcome to"
   main: "Bubble UP!"
+  image: "assets/images/logo.png"
 tagline: "Start Poppin'!"
 cta:
   text: "Play Now"
