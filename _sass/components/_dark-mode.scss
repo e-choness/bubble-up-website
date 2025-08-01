@@ -201,7 +201,48 @@
     border-top: 1px solid $dark-border;
   }
   
-  // Announcements
+  // Announcements section
+  .announcements-section {
+    background: linear-gradient(135deg, $dark-bg-secondary 0%, $dark-bg-tertiary 100%) !important;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 30%, rgba($dark-accent-primary, 0.08), transparent 50%);
+      pointer-events: none;
+    }
+    
+    .section-title {
+      color: $dark-text-primary;
+      text-shadow: 0 2px 10px rgba($dark-accent-primary, 0.2);
+    }
+    
+    .section-subtitle {
+      color: $dark-text-secondary;
+    }
+  }
+  
+  // Announcements archive
+  .announcements-archive {
+    background: $dark-bg-primary !important;
+    
+    .archive-header {
+      .archive-title {
+        color: $dark-text-primary;
+      }
+      
+      .archive-description {
+        color: $dark-text-secondary;
+      }
+    }
+  }
+  
+  // Announcement cards
   .announcement-card {
     background: rgba($dark-bg-primary, 0.8);
     border: 1px solid rgba($dark-accent-primary, 0.2);
@@ -228,6 +269,25 @@
     
     .announcement-meta {
       color: $dark-text-muted;
+    }
+  }
+  
+  // Announcements CTA button
+  .announcements-cta {
+    background: rgba($dark-bg-primary, 0.9) !important;
+    border: 1px solid rgba($dark-accent-primary, 0.2);
+    backdrop-filter: blur(10px);
+    
+    .btn {
+      background: linear-gradient(135deg, $dark-accent-primary, $dark-accent-secondary);
+      color: white;
+      border: none;
+      
+      &:hover {
+        background: linear-gradient(135deg, lighten($dark-accent-primary, 10%), lighten($dark-accent-secondary, 10%));
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba($dark-accent-primary, 0.3);
+      }
     }
   }
   
@@ -579,34 +639,210 @@
   
   // Announcement archive page
   .announcements-archive {
-    background: $dark-bg-primary;
+    background: linear-gradient(135deg, $dark-bg-primary 0%, $dark-bg-secondary 100%) !important;
+    position: relative;
     
-    .archive-header {
-      .archive-title {
-        color: $dark-text-primary;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba($dark-accent-primary, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba($dark-accent-secondary, 0.05) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .section-header {
+      .section-title {
+        color: $dark-text-primary !important;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) !important;
       }
       
-      .archive-description {
-        color: $dark-text-secondary;
+      .section-subtitle {
+        color: $dark-text-secondary !important;
+      }
+    }
+    
+    .announcement-card {
+      background: rgba($dark-bg-primary, 0.9) !important;
+      border: 1px solid rgba($dark-accent-primary, 0.2) !important;
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3) !important,
+        0 0 0 1px rgba($dark-accent-primary, 0.1) !important;
+      
+      &:hover {
+        background: rgba($dark-bg-primary, 0.95) !important;
+        border-color: rgba($dark-accent-primary, 0.4) !important;
+        box-shadow: 
+          0 30px 60px rgba(0, 0, 0, 0.4) !important,
+          0 0 0 1px rgba($dark-accent-primary, 0.2) !important;
       }
     }
   }
   
   // Individual announcement page
   .announcement-page {
-    background: $dark-bg-primary;
+    background: linear-gradient(135deg, $dark-bg-secondary 0%, $dark-bg-tertiary 100%) !important;
+    position: relative;
     
-    .announcement-content {
-      .announcement-title {
-        color: $dark-text-primary;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 30%, rgba($dark-accent-primary, 0.08), transparent 50%);
+      pointer-events: none;
+    }
+    
+    .announcement {
+      background: rgba($dark-bg-primary, 0.9) !important;
+      border: 1px solid rgba($dark-accent-primary, 0.2) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+      
+      .announcement-header {
+        .announcement-info {
+          background: linear-gradient(135deg, rgba($dark-accent-primary, 0.1) 0%, rgba($dark-accent-secondary, 0.1) 100%) !important;
+          
+          .announcement-title {
+            color: $dark-text-primary !important;
+          }
+          
+          .announcement-meta {
+            .announcement-date,
+            .announcement-author {
+              color: $dark-text-secondary !important;
+              
+              i {
+                color: $dark-accent-primary !important;
+              }
+            }
+          }
+          
+          .announcement-excerpt {
+            color: $dark-text-secondary !important;
+          }
+        }
       }
       
-      .announcement-meta {
-        color: $dark-text-muted;
+      .announcement-content {
+        color: $dark-text-secondary !important;
+        
+        h1, h2, h3, h4, h5, h6 {
+          color: $dark-text-primary !important;
+        }
+        
+        p {
+          color: $dark-text-secondary !important;
+        }
+        
+        ul, ol {
+          color: $dark-text-secondary !important;
+        }
+        
+        blockquote {
+          border-left: 4px solid $dark-accent-primary !important;
+          color: $dark-text-secondary !important;
+          background: rgba($dark-accent-primary, 0.05) !important;
+        }
+        
+        code {
+          background: rgba($dark-accent-primary, 0.1) !important;
+          color: $dark-accent-primary !important;
+        }
+        
+        pre {
+          background: $dark-bg-secondary !important;
+          border: 1px solid $dark-border !important;
+          
+          code {
+            background: none !important;
+            color: $dark-text-primary !important;
+          }
+        }
+        
+        a {
+          color: $dark-accent-primary !important;
+          
+          &:hover {
+            color: $dark-accent-secondary !important;
+          }
+        }
+        
+        img {
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .emoji {
+          color: $dark-text-secondary !important;
+        }
+        
+        .highlight {
+          background: linear-gradient(120deg, rgba($dark-accent-primary, 0.2) 0%, rgba($dark-accent-secondary, 0.2) 100%) !important;
+          color: $dark-text-primary !important;
+        }
+        
+        strong, b {
+          color: $dark-text-primary !important;
+        }
+        
+        em, i {
+          color: $dark-text-secondary !important;
+        }
+        
+        table {
+          background: $dark-bg-secondary !important;
+          border: 1px solid $dark-border !important;
+          
+          th, td {
+            border-color: $dark-border !important;
+            color: $dark-text-primary !important;
+          }
+          
+          th {
+            background: $dark-bg-tertiary !important;
+          }
+        }
       }
       
-      .announcement-body {
-        color: $dark-text-secondary;
+      .announcement-footer {
+        .announcement-actions {
+          .btn {
+            background: rgba($dark-bg-primary, 0.9) !important;
+            color: $dark-accent-primary !important;
+            border: 1px solid rgba($dark-accent-primary, 0.2) !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+            
+            &:hover {
+              background: $dark-accent-primary !important;
+              color: #fff !important;
+              box-shadow: 0 10px 25px rgba($dark-accent-primary, 0.3) !important;
+            }
+          }
+          
+          .announcement-share {
+            .share-label {
+              color: $dark-text-secondary !important;
+            }
+            
+            .social-icon {
+              background: rgba($dark-accent-primary, 0.1) !important;
+              color: $dark-accent-primary !important;
+              border: 1px solid rgba($dark-accent-primary, 0.2) !important;
+              
+              &:hover {
+                background: $dark-accent-primary !important;
+                color: #fff !important;
+                border-color: $dark-accent-primary !important;
+                box-shadow: 0 5px 15px rgba($dark-accent-primary, 0.3) !important;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -683,19 +919,121 @@
   
   // Team member page
   .team-member-page {
-    background: $dark-bg-primary;
+    background: linear-gradient(135deg, $dark-bg-secondary 0%, $dark-bg-tertiary 100%) !important;
+    position: relative;
     
-    .member-content {
-      .member-name {
-        color: $dark-text-primary;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 30%, rgba($dark-accent-primary, 0.08), transparent 50%);
+      pointer-events: none;
+    }
+    
+    .team-member-header {
+      background: rgba($dark-bg-primary, 0.9) !important;
+      border: 1px solid rgba($dark-accent-primary, 0.2) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+      
+      .team-member-avatar {
+        .member-avatar {
+          border: 4px solid $dark-accent-primary !important;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+        }
       }
       
-      .member-role {
-        color: $dark-text-secondary;
+      .team-member-info {
+        .member-name {
+          color: $dark-text-primary !important;
+        }
+        
+        .member-title {
+          color: $dark-text-secondary !important;
+        }
+        
+        .member-social {
+          .social-icon {
+            background: rgba($dark-accent-primary, 0.1) !important;
+            color: $dark-accent-primary !important;
+            border: 1px solid rgba($dark-accent-primary, 0.2) !important;
+            
+            &:hover {
+              background: $dark-accent-primary !important;
+              color: #fff !important;
+              border-color: $dark-accent-primary !important;
+              box-shadow: 0 8px 25px rgba($dark-accent-primary, 0.3) !important;
+            }
+          }
+        }
+      }
+    }
+    
+    .team-member-content {
+      background: rgba($dark-bg-primary, 0.9) !important;
+      border: 1px solid rgba($dark-accent-primary, 0.2) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: $dark-text-primary !important;
       }
       
-      .member-bio {
-        color: $dark-text-secondary;
+      p {
+        color: $dark-text-secondary !important;
+      }
+      
+      ul, ol {
+        color: $dark-text-secondary !important;
+      }
+      
+      blockquote {
+        border-left: 4px solid $dark-accent-primary !important;
+        color: $dark-text-secondary !important;
+        background: rgba($dark-accent-primary, 0.05) !important;
+      }
+      
+      code {
+        background: rgba($dark-accent-primary, 0.1) !important;
+        color: $dark-accent-primary !important;
+      }
+      
+      pre {
+        background: $dark-bg-secondary !important;
+        border: 1px solid $dark-border !important;
+        
+        code {
+          background: none !important;
+          color: $dark-text-primary !important;
+        }
+      }
+      
+      a {
+        color: $dark-accent-primary !important;
+        
+        &:hover {
+          color: $dark-accent-secondary !important;
+        }
+      }
+      
+      img {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+      }
+    }
+    
+    .team-member-actions {
+      .btn {
+        background: rgba($dark-bg-primary, 0.9) !important;
+        color: $dark-accent-primary !important;
+        border: 1px solid rgba($dark-accent-primary, 0.2) !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+        
+        &:hover {
+          background: $dark-accent-primary !important;
+          color: #fff !important;
+          box-shadow: 0 10px 25px rgba($dark-accent-primary, 0.3) !important;
+        }
       }
     }
   }
