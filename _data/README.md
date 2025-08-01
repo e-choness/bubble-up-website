@@ -17,7 +17,9 @@ All section templates have been updated to use the data structure:
 ## File Structure
 
 ### `about.yml`
+
 Contains the About section content:
+
 - **title**: Section title
 - **subtitle**: Optional subtitle
 - **heading**: Main heading within the section
@@ -26,7 +28,9 @@ Contains the About section content:
 - **image**: Image configuration (src, alt)
 
 ### `hero.yml`
+
 Contains the Hero section content:
+
 - **title**: Object with line and main title parts
 - **tagline**: Hero tagline text
 - **cta**: Call-to-action button (text, link)
@@ -34,7 +38,9 @@ Contains the Hero section content:
 - **bubbles**: Array of bubble animation classes
 
 ### `play.yml`
+
 Contains the Play/Download section content:
+
 - **title**: Section title
 - **subtitle**: Section subtitle
 - **platforms**: Array of platform objects with:
@@ -45,19 +51,25 @@ Contains the Play/Download section content:
   - data_platform attribute
 
 ### `team.yml`
+
 Contains the Team section content:
+
 - **title**: Section title
 - **intro**: Team introduction (heading, description, image)
 - **social_icons**: Social media icon mappings
 
 ### `contact.yml`
+
 Contains the Contact section content:
+
 - **title**: Section title
 - **contact_info**: Contact information items
 - **press_info**: Press and media information
 
 ### `showcase.yml`
+
 Contains the Showcase section content:
+
 - **title**: Section title
 - **subtitle**: Section subtitle
 - **items**: Array of showcase items with:
@@ -67,7 +79,9 @@ Contains the Showcase section content:
   - reverse layout flag
 
 ### `announcements.yml`
+
 Contains the Announcements section configuration:
+
 - **title**: Section title
 - **subtitle**: Section subtitle
 - **limit**: Number of announcements to display
@@ -104,4 +118,4 @@ In your HTML templates, access the data like this:
 - **Announcement Images**: `assets/images/announcements/`
 - **Placeholder Images**: Currently using placeholder.com for missing assets
 
-See `assets/images/README.md` for detailed image requirements and guidelines. 
+See `assets/images/README.md` for detailed image requirements and guidelines.

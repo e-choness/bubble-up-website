@@ -5,6 +5,7 @@ A modern, responsive navigation bar component with smooth animations and mobile-
 ## 🎯 Features
 
 ### Core Functionality
+
 - **Responsive Design**: Adapts to all screen sizes
 - **Mobile Menu**: Hamburger menu for mobile devices
 - **Smooth Scrolling**: Animated scrolling to sections
@@ -13,6 +14,7 @@ A modern, responsive navigation bar component with smooth animations and mobile-
 - **Backdrop Blur**: Modern glassmorphism effect
 
 ### Visual Features
+
 - **Fixed Position**: Stays at top of page
 - **Gradient Underlines**: Animated hover effects
 - **Brand Logo**: Customizable logo/brand name
@@ -38,6 +40,7 @@ _layouts/
 ## 🎨 Usage
 
 ### Basic Implementation
+
 The navigation is automatically included in all pages through the default layout:
 
 ```html
@@ -48,6 +51,7 @@ The navigation is automatically included in all pages through the default layout
 ### Navigation Links
 
 #### Main Page Navigation
+
 On the homepage, the navigation includes links to all major sections:
 
 - **Home** (`#hero`) - Hero section
@@ -59,6 +63,7 @@ On the homepage, the navigation includes links to all major sections:
 - **Contact** (`#contact`) - Contact section
 
 #### Sub-Page Navigation
+
 On individual pages (like announcements), the navigation shows:
 
 - **Back to Home** - Returns to homepage
@@ -69,19 +74,24 @@ On individual pages (like announcements), the navigation shows:
 ## 🔧 Customization
 
 ### Adding New Navigation Items
+
 1. **Update HTML**: Add new items to `_includes/nav.html`
 2. **Update JavaScript**: Add section tracking in `navbar.js`
 3. **Update Styling**: Customize appearance in `_navbar.scss`
 
 ### Example: Adding a New Section
+
 ```html
 <!-- In _includes/nav.html -->
 <li class="nav-item">
-    <a href="#new-section" class="nav-link" data-section="new-section">New Section</a>
+  <a href="#new-section" class="nav-link" data-section="new-section"
+    >New Section</a
+  >
 </li>
 ```
 
 ### Page Detection Logic
+
 The navigation automatically detects the current page type:
 
 ```liquid
@@ -97,9 +107,10 @@ This ensures appropriate navigation links are shown based on the current page.
 ### Styling Customization
 
 #### Colors
+
 ```scss
 // Primary navigation color
-$primary-color: #4A90E2;
+$primary-color: #4a90e2;
 
 // Hover and active states
 .nav-link:hover {
@@ -108,6 +119,7 @@ $primary-color: #4A90E2;
 ```
 
 #### Animations
+
 ```scss
 // Transition duration
 transition: all 0.3s ease-in-out;
@@ -119,29 +131,35 @@ transition: all 0.3s ease-in-out;
 ```
 
 #### Mobile Breakpoints
+
 ```scss
 // Desktop (1024px and up)
-@include desktop-up { }
+@include desktop-up {
+}
 
 // Mobile (below 1024px)
-@media (max-width: #{$breakpoint-lg - 1px}) { }
+@media (max-width: #{$breakpoint-lg - 1px}) {
+}
 ```
 
 ## 📱 Responsive Behavior
 
 ### Desktop (1024px+)
+
 - Horizontal menu layout
 - Hover effects with underlines
 - Active link indicators
 - Smooth scroll animations
 
 ### Tablet (768px - 1023px)
+
 - Hamburger menu toggle
 - Vertical mobile menu
 - Touch-friendly tap targets
 - Backdrop blur effects
 
 ### Mobile (below 768px)
+
 - Compact header height
 - Full-width mobile menu
 - Larger touch targets
@@ -150,6 +168,7 @@ transition: all 0.3s ease-in-out;
 ## 🚀 JavaScript Features
 
 ### Mobile Menu Toggle
+
 ```javascript
 // Toggle mobile menu
 toggleMobileMenu() {
@@ -159,12 +178,13 @@ toggleMobileMenu() {
 ```
 
 ### Smooth Scrolling
+
 ```javascript
 // Smooth scroll to sections
 handleSmoothScroll(e) {
   const targetId = href.substring(1);
   const targetElement = document.getElementById(targetId);
-  
+
   window.scrollTo({
     top: targetPosition,
     behavior: 'smooth'
@@ -173,11 +193,12 @@ handleSmoothScroll(e) {
 ```
 
 ### Active Link Tracking
+
 ```javascript
 // Update active link based on scroll position
 updateActiveLink() {
   const scrollPosition = window.scrollY + 100;
-  
+
   // Check which section is currently visible
   // Add/remove active classes accordingly
 }
@@ -186,6 +207,7 @@ updateActiveLink() {
 ## 🎨 CSS Classes
 
 ### Main Classes
+
 - `.navbar` - Main navigation container
 - `.nav-container` - Inner container with max-width
 - `.nav-brand` - Logo/brand section
@@ -195,6 +217,7 @@ updateActiveLink() {
 - `.nav-link` - Navigation link
 
 ### State Classes
+
 - `.navbar-scrolled` - Applied when page is scrolled
 - `.navbar-hidden` - Applied when navbar is hidden
 - `.nav-menu-open` - Applied when mobile menu is open
@@ -204,21 +227,24 @@ updateActiveLink() {
 ## 🔧 Configuration
 
 ### Breakpoints
+
 ```scss
-$breakpoint-sm: 640px;   // Mobile
-$breakpoint-md: 768px;   // Tablet
-$breakpoint-lg: 1024px;  // Desktop
-$breakpoint-xl: 1280px;  // Large Desktop
+$breakpoint-sm: 640px; // Mobile
+$breakpoint-md: 768px; // Tablet
+$breakpoint-lg: 1024px; // Desktop
+$breakpoint-xl: 1280px; // Large Desktop
 ```
 
 ### Colors
+
 ```scss
-$primary-color: #4A90E2;
-$secondary-color: #7B68EE;
+$primary-color: #4a90e2;
+$secondary-color: #7b68ee;
 $gradient-primary: linear-gradient(135deg, $primary-color, $secondary-color);
 ```
 
 ### Spacing
+
 ```scss
 $container-max-width: 1200px;
 $container-padding: 1rem;
@@ -249,11 +275,13 @@ $container-padding: 1rem;
 4. **Styling issues**: Check SCSS compilation
 
 ### Debug Mode
+
 Add this to see navigation state:
+
 ```javascript
-console.log('Navbar state:', {
-  scrolled: this.navbar.classList.contains('navbar-scrolled'),
-  hidden: this.navbar.classList.contains('navbar-hidden'),
-  mobileOpen: this.navMenu.classList.contains('nav-menu-open')
+console.log("Navbar state:", {
+  scrolled: this.navbar.classList.contains("navbar-scrolled"),
+  hidden: this.navbar.classList.contains("navbar-hidden"),
+  mobileOpen: this.navMenu.classList.contains("nav-menu-open"),
 });
-``` 
+```

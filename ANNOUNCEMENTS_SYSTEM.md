@@ -5,6 +5,7 @@ This document describes the comprehensive announcements system and team member p
 ## 📰 Announcements System
 
 ### Overview
+
 The announcements system provides a complete content management solution for news and updates, featuring:
 
 - **Main Page Display**: Shows latest 3 announcements on homepage
@@ -44,6 +45,7 @@ excerpt: "Brief description of the announcement"
 ### Features
 
 #### Main Page (Latest 3)
+
 - Displays most recent 3 announcements
 - Sorted by date (newest first)
 - Compact card layout
@@ -51,6 +53,7 @@ excerpt: "Brief description of the announcement"
 - "View All Announcements" CTA button
 
 #### Archive Page (All Announcements)
+
 - Grid layout with 3 cards per row
 - Responsive: 2 columns on tablet, 1 column on mobile
 - Sorted by date (newest first)
@@ -58,6 +61,7 @@ excerpt: "Brief description of the announcement"
 - Pagination support (future enhancement)
 
 #### Individual Announcement Pages
+
 - Full-width content layout
 - Rich text support (Markdown)
 - Image galleries
@@ -78,6 +82,7 @@ The announcements system uses the main page design as inspiration:
 ## 👥 Team Member Pages
 
 ### Overview
+
 Individual team member profile pages with:
 
 - **Professional Profiles**: Detailed information about each team member
@@ -117,12 +122,14 @@ social:
 ### Features
 
 #### Team Member Layout
+
 - **Header Section**: Avatar, name, title, social links
 - **Content Area**: Rich text content with Markdown support
 - **Navigation**: "Back to Team" button
 - **Responsive**: Mobile-optimized design
 
 #### Interactive Elements
+
 - **Clickable Team Cards**: On main page, cards link to individual pages
 - **Unique Color Schemes**: Each team member card has a different gradient background
 - **Social Icons**: Platform-specific hover colors integrated within cards
@@ -156,13 +163,16 @@ All backgrounds use low opacity (15%) for a light, soft appearance that maintain
 ## 🔗 Navigation Integration
 
 ### Updated Navigation
+
 The navigation system has been updated to support the new pages:
 
 #### Main Page Navigation
+
 - **News**: Links to announcements section
 - **Team**: Links to team section
 
 #### Sub-Page Navigation
+
 - **Back to Home**: Returns to homepage
 - **All News**: Links to announcements archive
 - **Team**: Links to main page team section
@@ -185,11 +195,13 @@ collections:
 ## 📱 Responsive Design
 
 ### Breakpoints
+
 - **Desktop**: 3 cards per row (announcements)
 - **Tablet**: 2 cards per row
 - **Mobile**: 1 card per row
 
 ### Mobile Optimizations
+
 - **Touch-Friendly**: Larger touch targets
 - **Readable Text**: Optimized font sizes
 - **Fast Loading**: Optimized images and assets
@@ -198,17 +210,20 @@ collections:
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Primary**: #4A90E2 (Blue)
 - **Secondary**: #7B68EE (Purple)
 - **Accent**: #FF6B6B (Red)
 - **Success**: #4ECDC4 (Teal)
 
 ### Typography
+
 - **Font Family**: Poppins
 - **Hierarchy**: H1-H6 with consistent sizing
 - **Line Height**: 1.6-1.7 for readability
 
 ### Spacing
+
 - **Consistent**: 8px grid system
 - **Responsive**: Scales with screen size
 - **Accessible**: Adequate touch targets
@@ -216,6 +231,7 @@ collections:
 ## 🚀 Future Enhancements
 
 ### Planned Features
+
 - **Search Functionality**: Filter announcements by category/date
 - **Categories**: Tag system for announcements
 - **Comments**: Community engagement features
@@ -225,6 +241,7 @@ collections:
 - **SEO Optimization**: Enhanced meta tags and structured data
 
 ### Technical Improvements
+
 - **Performance**: Image optimization and lazy loading
 - **Accessibility**: ARIA labels and keyboard navigation
 - **SEO**: Schema markup and Open Graph tags
@@ -233,18 +250,21 @@ collections:
 ## 📋 Usage Guidelines
 
 ### Creating Announcements
+
 1. Create new file in `_announcements/` with date prefix
 2. Add front matter with title, date, image, excerpt
 3. Write content in Markdown format
 4. Test locally before publishing
 
 ### Adding Team Members
+
 1. Create new file in `_team/` with number prefix
 2. Add front matter with name, title, avatar, social links
 3. Write detailed bio in Markdown format
 4. Add avatar image to `assets/images/team/`
 
 ### Styling Guidelines
+
 - Use existing color variables and spacing
 - Follow responsive design patterns
 - Maintain consistency with main page design
@@ -253,6 +273,7 @@ collections:
 ## 🔧 Maintenance
 
 ### Regular Tasks
+
 - **Content Updates**: Keep announcements current
 - **Image Optimization**: Compress and optimize images
 - **Link Checking**: Verify all links work correctly
@@ -260,6 +281,7 @@ collections:
 - **SEO Audits**: Review meta tags and structured data
 
 ### Backup Strategy
+
 - **Version Control**: All content in Git repository
 - **Image Backups**: Store original images separately
 - **Configuration**: Document all custom settings
@@ -267,4 +289,4 @@ collections:
 
 ---
 
-This system provides a solid foundation for content management while maintaining the beautiful design and user experience of the main Bubble UP! website. 
+This system provides a solid foundation for content management while maintaining the beautiful design and user experience of the main Bubble UP! website.

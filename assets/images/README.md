@@ -15,16 +15,19 @@ assets/images/
 ## Image Requirements
 
 ### Team Photos
+
 - **Format**: PNG or JPG
 - **Size**: Recommended 400x400px for avatars, 800x600px for group photos
 - **Location**: `assets/images/team/`
 
 ### Game Screenshots & GIFs
+
 - **Format**: PNG, JPG, or GIF for animations
 - **Size**: Recommended 600x400px for showcase items
 - **Location**: `assets/images/` (root of images directory)
 
 ### Announcement Images
+
 - **Format**: PNG or JPG
 - **Size**: Recommended 400x300px
 - **Location**: `assets/images/announcements/`
@@ -52,7 +55,8 @@ The following sections are using placeholder images until real assets are availa
 ## Image Optimization
 
 For best performance:
+
 - Compress images before uploading
 - Use appropriate formats (PNG for graphics, JPG for photos)
 - Consider using WebP format for modern browsers
-- Keep file sizes under 500KB when possible 
+- Keep file sizes under 500KB when possible

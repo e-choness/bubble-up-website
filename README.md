@@ -18,7 +18,7 @@ A playful, animated Website designed for the Bubble UP! game website. Features m
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/your-username/bubbleup-jekyll-theme.git
+git clone https://github.com/e-choness/bubble-up-website.git
 cd bubbleup-jekyll-theme
 ```
 
