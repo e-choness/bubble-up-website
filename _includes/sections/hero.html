@@ -1,0 +1,32 @@
+{% assign hero = site.data.hero %}
+<section class="hero-section" id="hero">
+    <div class="bubble-background">
+        {% for bubble in hero.bubbles %}
+            <div class="bubble {{ bubble.class }}"></div>
+        {% endfor %}
+    </div>
+    
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="hero-title-line">{{ hero.title.line }}</span>
+            <!-- <span class="hero-title-main">{{ hero.title.main }}</span> -->
+            <img src="{{ site.baseurl }}{{hero.title.image}}" alt="{{ hero.title.main }}" class="logo">
+        </h1>
+        <p class="hero-tagline">{{ hero.tagline }}</p>
+        
+        <div class="hero-cta">
+            <a href="{{ hero.cta.link }}" class="btn btn-primary btn-large">
+                {{ hero.cta.text }}
+            </a>
+        </div>
+    </div>
+    
+    <div class="scroll-indicator">
+        <div class="scroll-arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p>{{ hero.scroll_indicator.text }}</p>
+    </div>
+</section>

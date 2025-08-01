@@ -1,0 +1,25 @@
+title: "Contact Us"
+contact_info:
+  title: "Get In Touch"
+  items:
+    - icon: "📍"
+      title: "Address"
+      value: "Edmonton • AB • Canada"
+      link: false
+    - icon: "📞"
+      title: "Phone"
+      value: "(403) 768-9659"
+      link: "tel: (403) 768-9659"
+    - icon: "✉️"
+      title: "Email"
+      value: "bubbleup@bubbleupgame.com"
+      link: "mailto:bubbleup@bubbleupgame.com"
+press_info:
+  title: "Press & Media"
+  description: "Looking for press materials, screenshots, or information about Bubble UP!? Download our comprehensive press kit with everything you need for coverage."
+  press_kit:
+    text: "📥 Download Press Kit"
+    link: "/"
+  media_contact:
+    label: "Media Contact:"
+    email: "bubbleup@bubbleupgame.com" 

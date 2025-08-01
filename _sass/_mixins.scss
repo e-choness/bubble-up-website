@@ -1,0 +1,80 @@
+// Responsive breakpoints
+@mixin mobile-up {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  
+  @mixin tablet-up {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  
+  @mixin desktop-up {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  
+  @mixin large-up {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+  
+  // Flexbox utilities
+  @mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  // Button mixins
+  @mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    border-radius: $border-radius-lg;
+    font-family: $font-family;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all $transition-normal;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  
+  // Bubble animation
+  @mixin bubble-float($duration: 3s, $delay: 0s) {
+    animation: bubbleFloat $duration ease-in-out $delay infinite alternate;
+  }
+  
+  // Card styling
+  @mixin card-base {
+    background: white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-md;
+    transition: all $transition-normal;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-xl;
+    }
+  }
+  
+  // Section spacing
+  @mixin section-spacing {
+    padding: $spacing-2xl 0;
+    
+    @include tablet-up {
+      padding: 5rem 0;
+    }
+  }

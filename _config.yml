@@ -1,0 +1,76 @@
+# Site settings
+title: Bubble UP!
+email: contact@bubbleupgame.com
+description: >-
+  The fun, addictive bubble-popping game that brings joy to players worldwide.
+  Available on all platforms!
+baseurl: ""
+url: "https://bubbleupgame.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Sass configuration
+sass:
+  style: compressed
+  load_paths:
+    - _sass
+  quiet_deps: true
+  quiet: true
+  sass_dir: _sass
+
+# Collections
+collections:
+  announcements:
+    output: true
+    permalink: /announcements/:slug/
+  team:
+    output: true
+    permalink: /team/:slug/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "announcements"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "team"
+    values:
+      layout: "team-member"
+
+# Custom settings
+social:
+  linktree: "https://linktr.ee/bubbleupgame"
+  steam: "https://store.steampowered.com/app/3655340/Bubble_UP/"
+  instagram: "https://www.instagram.com/bubbleupgame"
+  youtube: "https://www.youtube.com/@BubbleUPGame"
+  twitter: "https://x.com/bubbleupgame"
+  discord: "https://discord.gg/DWadA9Npbp"
+  linkedin: "https://www.linkedin.com/company/bubbleupgame/"
+  patreon: "https://www.patreon.com/bubbleupgame"
+  bluesky: "https://bsky.app/profile/bubbleupgame.bsky.social"
+
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

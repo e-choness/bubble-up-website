@@ -1,0 +1,55 @@
+<section class="announcements-archive">
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title">All Announcements</h1>
+            <p class="section-subtitle">Stay updated with all the latest news and updates from Bubble UP!</p>
+        </div>
+        
+        <div class="announcements-grid">
+            {% assign sorted_announcements = site.announcements | sort: 'date' | reverse %}
+            {% for announcement in sorted_announcements %}
+                <article class="announcement-card">
+                    <div class="announcement-image">
+                        {% if announcement.image %}
+                            <img src="{{ announcement.image | relative_url }}" 
+                                 alt="{{ announcement.title }}" 
+                                 loading="lazy">
+                        {% else %}
+                            <img src="https://via.placeholder.com/400x250/4A90E2/FFFFFF?text=Announcement" 
+                                 alt="Announcement placeholder">
+                        {% endif %}
+                    </div>
+                    
+                    <div class="announcement-content">
+                        <h3 class="announcement-title">
+                            <a href="{{ announcement.url | relative_url }}">{{ announcement.title }}</a>
+                        </h3>
+                        
+                        {% if announcement.excerpt %}
+                            <p class="announcement-excerpt">{{ announcement.excerpt }}</p>
+                        {% endif %}
+                        
+                        <div class="announcement-meta">
+                            <time datetime="{{ announcement.date | date_to_xmlschema }}">
+                                {{ announcement.date | date: "%B %d, %Y" }}
+                            </time>
+                            <a href="{{ announcement.url | relative_url }}" class="read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+        
+        {% if sorted_announcements.size == 0 %}
+            <div class="no-announcements">
+                <div class="no-announcements-content">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>No Announcements Yet</h3>
+                    <p>Check back soon for exciting updates and news!</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section> 

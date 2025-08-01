@@ -1,0 +1,24 @@
+title: "Gameplay Showcase"
+subtitle: "Experience the magic in action"
+items:
+  - title: "Satisfying Bubble Physics"
+    description: "Watch bubbles react with realistic physics as they bounce, merge, and pop in spectacular chain reactions!"
+    image:
+      src: "assets/images/showcase/bubbles.gif"
+      alt: "Bubble popping mechanics"
+      class: "showcase-gif"
+    reverse: false
+  - title: "Explosive Power-ups"
+    description: "Unlock amazing power-ups that create dazzling effects and help you clear even the trickiest levels!"
+    image:
+      src: "assets/images/showcase/power-up.gif"
+      alt: "Power-ups and special effects"
+      class: "showcase-gif"
+    reverse: true
+  - title: "Endless Possibilities"
+    description: "Experience the thrill of endless gameplay with increasing difficulty and ever-changing dynamics to keep you on your toes!"
+    image:
+      src: "assets/images/showcase/frenzy.gif"
+      alt: "Various game modes"
+      class: "showcase-gif"
+    reverse: false 

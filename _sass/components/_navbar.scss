@@ -1,0 +1,258 @@
+// Navigation Bar Component
+// Responsive navigation with smooth animations and modern styling
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+  
+  // Scrolled state
+  &.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Hidden state (when scrolling down)
+  &.navbar-hidden {
+    transform: translateY(-100%);
+  }
+}
+
+.nav-container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+// Brand/Logo
+.nav-brand {
+  .nav-logo {
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+    
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+// Dark mode logo override
+[data-theme="dark"] .nav-brand .nav-logo {
+  color: #ffffff !important;
+  background: transparent !important;
+  
+  &:hover {
+    color: #60a5fa !important;
+  }
+  
+  .nav-logo-text {
+    color: #ffffff !important;
+    background: transparent !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+    font-weight: 700 !important;
+  }
+}
+
+// Navigation Menu
+.nav-menu {
+  @include desktop-up {
+    display: block;
+  }
+  
+  // Mobile menu styles (tablet and below)
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    
+    &.nav-menu-open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    flex-direction: column;
+    gap: 0;
+    padding: 2rem 0;
+  }
+}
+
+.nav-item {
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  // Hover effect
+  &:hover {
+    color: $primary-color;
+  }
+  
+  // Active state
+  &.nav-link-active {
+    color: $primary-color;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background: $gradient-primary;
+      border-radius: 1px;
+      
+      @media (max-width: #{$breakpoint-lg - 1px}) {
+        display: none;
+      }
+    }
+  }
+  
+  // Underline animation
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: $gradient-primary;
+    border-radius: 1px;
+    transition: width 0.3s ease-in-out;
+    
+    @media (max-width: #{$breakpoint-lg - 1px}) {
+      display: none;
+    }
+  }
+  
+  &:hover::before {
+    width: 20px;
+  }
+}
+
+// Mobile Menu Toggle
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  
+  @media (max-width: #{$breakpoint-lg - 1px}) {
+    display: flex;
+  }
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.nav-toggle-line {
+  width: 100%;
+  height: 3px;
+  background: $primary-color;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+  
+  // Animated hamburger
+  .nav-toggle.active & {
+    &:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    
+    &:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+}
+
+// Responsive breakpoints
+@media (max-width: #{$breakpoint-sm - 1px}) {
+  .nav-container {
+    height: 60px;
+  }
+  
+  .nav-menu {
+    top: 60px;
+  }
+  
+  .nav-brand .nav-logo {
+    font-size: 1.25rem;
+  }
+}
+
+// Smooth scrolling for anchor links
+html {
+  scroll-behavior: smooth;
+}
+
+// Body padding to account for fixed navbar
+body {
+  padding-top: 70px;
+  
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    padding-top: 60px;
+  }
+} 

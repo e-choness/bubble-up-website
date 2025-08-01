@@ -1,0 +1,50 @@
+{% assign contact = site.data.contact %}
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">{{ contact.title }}</h2>
+        </div>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>{{ contact.contact_info.title }}</h3>
+                
+                {% for item in contact.contact_info.items %}
+                    <div class="contact-item">
+                        <div class="contact-icon">{{ item.icon }}</div>
+                        <div class="contact-details">
+                            <h4>{{ item.title }}</h4>
+                            <p>
+                                {% if item.link %}
+                                    <a href="{{ item.link }}">{{ item.value }}</a>
+                                {% else %}
+                                    {{ item.value }}
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <div class="press-info">
+                <h3>{{ contact.press_info.title }}</h3>
+                <p>{{ contact.press_info.description }}</p>
+                
+                <div class="press-kit-download">
+                    <a href="{{ contact.press_info.press_kit.link | relative_url }}" 
+                       class="btn btn-primary" 
+                       download>
+                        {{ contact.press_info.press_kit.text }}
+                    </a>
+                </div>
+                
+                <div class="press-contact">
+                    <p>
+                        <strong>{{ contact.press_info.media_contact.label }}</strong><br>
+                        <a href="mailto:{{ contact.press_info.media_contact.email }}">{{ contact.press_info.media_contact.email }}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

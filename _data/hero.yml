@@ -1,0 +1,17 @@
+title:
+  line: "Welcome to"
+  main: "Bubble UP!"
+  image: "assets/images/logo.png"
+tagline: "Start Poppin'!"
+cta:
+  text: "Play Now"
+  link: "#play"
+scroll_indicator:
+  text: "Scroll Down"
+bubbles:
+  - class: "bubble-1"
+  - class: "bubble-2"
+  - class: "bubble-3"
+  - class: "bubble-4"
+  - class: "bubble-5"
+  - class: "bubble-6" 

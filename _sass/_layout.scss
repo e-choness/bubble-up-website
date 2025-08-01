@@ -1,0 +1,121 @@
+// Layout components
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+  
+  // Section styling
+  section {
+    position: relative;
+    overflow: hidden;
+    @include section-spacing;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+  
+  .section-title {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: white;
+    margin-bottom: $spacing-sm;
+    
+    @include tablet-up {
+      font-size: $font-size-4xl;
+    }
+  }
+  
+  .section-subtitle {
+    font-size: $font-size-large;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  // Grid systems
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    
+    @include tablet-up {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include desktop-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  // Main content
+  .page-content,
+  .post-content {
+    flex: 1;
+    background: white;
+    min-height: 80vh;
+    
+    .container {
+      padding-top: $spacing-2xl;
+      padding-bottom: $spacing-2xl;
+    }
+  }
+  
+  .page-title,
+  .post-title {
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: $spacing-lg;
+    text-align: center;
+  }
+  
+  .post-meta {
+    text-align: center;
+    color: #666;
+    margin-bottom: $spacing-xl;
+    font-size: $font-size-small;
+  }
+  
+  .post-body {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2, h3, h4 {
+      margin-top: $spacing-xl;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      margin-bottom: $spacing-md;
+    }
+    
+    ul, ol {
+      margin-bottom: $spacing-md;
+      padding-left: $spacing-lg;
+    }
+    
+    img {
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-md;
+      margin: $spacing-lg 0;
+    }
+  }

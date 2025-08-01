@@ -1,0 +1,35 @@
+// Main SCSS Entry Point
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Sass configuration
+@import 'sass-config';
+
+// Variables and mixins
+@import 'variables';
+@import 'mixins';
+
+// Base styles
+@import 'base';
+@import 'layout';
+
+// Components
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/footer';
+@import 'components/bubbles';
+@import 'components/animations';
+@import 'components/social-icons';
+@import 'components/navbar';
+@import 'components/dark-mode';
+
+// Sections
+@import 'sections/hero';
+@import 'sections/about';
+@import 'sections/play';
+@import 'sections/announcements';
+@import 'sections/announcements-archive';
+@import 'sections/announcement-page';
+@import 'sections/showcase';
+@import 'sections/team';
+@import 'sections/team-member';
+@import 'sections/contact';

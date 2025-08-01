@@ -1,0 +1,26 @@
+{% assign showcase = site.data.showcase %}
+<section class="showcase-section" id="showcase">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">{{ showcase.title }}</h2>
+            <p class="section-subtitle">{{ showcase.subtitle }}</p>
+        </div>
+        
+        <div class="showcase-grid">
+            {% for item in showcase.items %}
+                <div class="showcase-item{% if item.reverse %} showcase-reverse{% endif %}">
+                    <div class="showcase-media">
+                        <img src="{{ item.image.src | relative_url }}" 
+                             alt="{{ item.image.alt }}" 
+                             class="{{ item.image.class }}"
+                             loading="lazy">
+                    </div>
+                    <div class="showcase-content">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

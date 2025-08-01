@@ -1,0 +1,116 @@
+// Button components
+.btn {
+    @include button-base;
+    
+    // Sizes
+    &.btn-small {
+      padding: $spacing-xs $spacing-sm;
+      font-size: $font-size-small;
+    }
+    
+    &.btn-large {
+      padding: $spacing-md $spacing-xl;
+      font-size: $font-size-large;
+      font-weight: 600;
+    }
+    
+    // Primary button
+    &.btn-primary {
+      background: $gradient-primary;
+      color: white;
+      box-shadow: $shadow-md;
+      
+      &:hover {
+        background: linear-gradient(135deg, lighten($primary-color, 10%), lighten($secondary-color, 10%));
+        color: white;
+        text-decoration: none;
+      }
+    }
+    
+    // Secondary button
+    &.btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        text-decoration: none;
+      }
+    }
+    
+    // Accent button
+    &.btn-accent {
+      background: $gradient-accent;
+      color: white;
+      
+      &:hover {
+        background: linear-gradient(135deg, lighten($accent-color, 10%), #FF9E9E);
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  // Download buttons
+  .download-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    @include mobile-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include desktop-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .download-btn {
+    @include card-base;
+    display: flex;
+    align-items: center;
+    padding: $spacing-lg;
+    text-decoration: none;
+    color: #333;
+    transition: all $transition-normal;
+    
+    &:hover {
+      color: #333;
+      transform: translateY(-6px) scale(1.02);
+    }
+    
+    .download-icon {
+      font-size: $font-size-3xl;
+      margin-right: $spacing-md;
+    }
+    
+    .download-text {
+      flex: 1;
+      
+      .download-platform {
+        display: block;
+        font-weight: 600;
+        font-size: $font-size-large;
+        color: $primary-color;
+      }
+      
+      .download-subtitle {
+        display: block;
+        font-size: $font-size-small;
+        color: #666;
+      }
+    }
+    
+    // Platform-specific styling
+    &[data-platform="android"] { border-left: 4px solid #34A853; }
+    &[data-platform="ios"] { border-left: 4px solid #007AFF; }
+    &[data-platform="windows"] { border-left: 4px solid #0078D4; }
+    &[data-platform="mac"] { border-left: 4px solid #000000; }
+    &[data-platform="linux"] { border-left: 4px solid #FCC624; }
+  }
