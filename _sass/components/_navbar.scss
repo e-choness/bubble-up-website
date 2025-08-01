@@ -49,6 +49,23 @@
   }
 }
 
+// Dark mode logo override
+[data-theme="dark"] .nav-brand .nav-logo {
+  color: #ffffff !important;
+  background: transparent !important;
+  
+  &:hover {
+    color: #60a5fa !important;
+  }
+  
+  .nav-logo-text {
+    color: #ffffff !important;
+    background: transparent !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+    font-weight: 700 !important;
+  }
+}
+
 // Navigation Menu
 .nav-menu {
   @include desktop-up {

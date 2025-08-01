@@ -1,0 +1,715 @@
+// Dark mode toggle button
+.dark-mode-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: $border-radius-full;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-fast;
+  margin-left: $spacing-sm;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+  
+  .toggle-icon {
+    width: 20px;
+    height: 20px;
+    transition: all $transition-normal;
+    
+    &.sun-icon {
+      color: $dark-accent-warning;
+      display: none;
+    }
+    
+    &.moon-icon {
+      color: $dark-text-secondary;
+      display: block;
+    }
+  }
+  
+  // Dark mode active state
+  &.dark-mode-active {
+    .sun-icon {
+      display: block;
+    }
+    
+    .moon-icon {
+      display: none;
+    }
+  }
+  
+  // Theme transition animation
+  &.theme-transitioning {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+// Dark mode theme styles
+[data-theme="dark"] {
+  // Base elements
+  body {
+    background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #2a3142 100%) !important;
+    color: $dark-text-primary;
+  }
+  
+  // Typography
+  h1, h2, h3, h4, h5, h6 {
+    color: $dark-text-primary;
+  }
+  
+  p {
+    color: $dark-text-secondary;
+  }
+  
+  a {
+    color: $dark-accent-primary;
+    
+    &:hover {
+      color: $dark-accent-secondary;
+    }
+  }
+  
+  // Navigation
+  .navbar {
+    background: rgba($dark-bg-primary, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba($dark-border, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    
+    .nav-brand {
+      .nav-logo {
+        color: $dark-text-primary !important;
+        background: transparent !important;
+        
+        &:hover {
+          color: $dark-accent-primary !important;
+        }
+      }
+      
+      .nav-logo .nav-logo-text {
+        color: #ffffff !important;
+        font-weight: 600;
+        background: transparent !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    }
+    
+    .nav-link {
+      color: $dark-text-secondary;
+      transition: all $transition-fast;
+      
+      &:hover {
+        color: $dark-accent-primary;
+        transform: translateY(-1px);
+      }
+      
+      &.active {
+        color: $dark-accent-primary;
+        font-weight: 500;
+      }
+    }
+    
+    .nav-toggle-line {
+      background-color: $dark-text-secondary;
+    }
+    
+    // Mobile menu styles for dark mode
+    @media (max-width: #{$breakpoint-lg - 1px}) {
+      .nav-menu {
+        background: rgba($dark-bg-primary, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba($dark-border, 0.3);
+      }
+    }
+    
+    // Mobile logo size for dark mode
+    @media (max-width: #{$breakpoint-sm - 1px}) {
+      .nav-brand .nav-logo {
+        font-size: 1.25rem;
+        color: $dark-text-primary !important;
+      }
+    }
+  }
+  
+  // Cards and sections
+  .card, .section {
+    background: $dark-bg-secondary;
+    border: 1px solid $dark-border;
+    box-shadow: 0 4px 6px $dark-shadow;
+  }
+  
+  // Buttons
+  .btn {
+    background: $dark-bg-tertiary;
+    color: $dark-text-primary;
+    border: 1px solid rgba($dark-border, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all $transition-normal;
+    
+    &:hover {
+      background: lighten($dark-bg-tertiary, 8%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    &.btn-primary {
+      background: linear-gradient(135deg, $dark-accent-primary, $dark-accent-secondary);
+      color: white;
+      border: none;
+      
+      &:hover {
+        background: linear-gradient(135deg, lighten($dark-accent-primary, 10%), lighten($dark-accent-secondary, 10%));
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba($dark-accent-primary, 0.3);
+      }
+    }
+  }
+  
+  // Form elements
+  input, textarea, select {
+    background: $dark-bg-tertiary;
+    color: $dark-text-primary;
+    border: 1px solid $dark-border;
+    
+    &::placeholder {
+      color: $dark-text-muted;
+    }
+    
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+    }
+  }
+  
+  // Footer
+  .footer {
+    background: $dark-bg-primary;
+    color: $dark-text-secondary;
+    border-top: 1px solid $dark-border;
+  }
+  
+  // Announcements
+  .announcement-card {
+    background: rgba($dark-bg-primary, 0.8);
+    border: 1px solid rgba($dark-accent-primary, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all $transition-normal;
+    
+    &:hover {
+      background: rgba($dark-bg-primary, 0.9);
+      border-color: rgba($dark-accent-primary, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    }
+    
+    .announcement-title {
+      color: $dark-accent-primary;
+      font-weight: 600;
+    }
+    
+    .announcement-excerpt {
+      color: $dark-text-secondary;
+      line-height: 1.6;
+    }
+    
+    .announcement-meta {
+      color: $dark-text-muted;
+    }
+  }
+  
+  // Team member cards
+  .team-member-card {
+    background: $dark-bg-secondary;
+    border: 1px solid $dark-border;
+    
+    .team-member-name {
+      color: $dark-text-primary;
+    }
+    
+    .team-member-role {
+      color: $dark-text-secondary;
+    }
+    
+    .team-member-bio {
+      color: $dark-text-secondary;
+    }
+  }
+  
+  // Code blocks (if any)
+  pre, code {
+    background: $dark-bg-primary;
+    color: $dark-text-primary;
+    border: 1px solid $dark-border;
+  }
+  
+  // Tables
+  table {
+    background: $dark-bg-secondary;
+    
+    th, td {
+      border-color: $dark-border;
+      color: $dark-text-primary;
+    }
+    
+    th {
+      background: $dark-bg-tertiary;
+    }
+  }
+  
+  // Layout elements
+  .page-content,
+  .post-content {
+    background: $dark-bg-primary;
+  }
+  
+  .page-title,
+  .post-title {
+    color: $dark-text-primary;
+  }
+  
+  .post-meta {
+    color: $dark-text-muted;
+  }
+  
+  .section-title {
+    color: $dark-text-primary;
+  }
+  
+  .section-subtitle {
+    color: $dark-text-secondary;
+  }
+}
+
+// Smooth transition for theme switching
+* {
+  transition: background-color $transition-normal, color $transition-normal, border-color $transition-normal;
+}
+
+// Additional dark mode styles for specific sections
+[data-theme="dark"] {
+  // Hero section
+  .hero-section {
+    background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #2a3142 100%) !important;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 30%, rgba($dark-accent-primary, 0.08), transparent 50%);
+      pointer-events: none;
+    }
+    
+    .hero-content {
+      .hero-title {
+        .hero-title-line {
+          color: $dark-text-secondary;
+          opacity: 0.9;
+        }
+        
+        .hero-title-main {
+          background: linear-gradient(45deg, #e2e8f0, $dark-accent-primary, #a855f7) !important;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-shadow: 0 4px 20px rgba($dark-accent-primary, 0.2);
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+      }
+      
+      .hero-tagline {
+        color: $dark-text-secondary;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+      
+      .hero-cta {
+        .btn {
+          background: linear-gradient(135deg, $dark-accent-primary, #a855f7) !important;
+          border: none;
+          box-shadow: 0 8px 32px rgba($dark-accent-primary, 0.3);
+          
+          &:hover {
+            background: linear-gradient(135deg, lighten($dark-accent-primary, 10%), #9333ea) !important;
+            box-shadow: 0 12px 40px rgba($dark-accent-primary, 0.4);
+          }
+        }
+      }
+    }
+    
+    .scroll-indicator {
+      .scroll-arrow {
+        border-color: rgba($dark-accent-primary, 0.6);
+        
+        span {
+          background: $dark-accent-primary;
+          box-shadow: 0 0 10px rgba($dark-accent-primary, 0.5);
+        }
+      }
+      
+      p {
+        color: $dark-text-secondary;
+      }
+    }
+  }
+  
+  // About section
+  .about-section {
+    background: linear-gradient(135deg, $dark-bg-secondary 0%, $dark-bg-tertiary 100%) !important;
+    color: $dark-text-primary;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 70%, rgba($dark-accent-success, 0.05), transparent 50%);
+      pointer-events: none;
+    }
+    
+    .section-title {
+      color: $dark-accent-primary;
+      text-shadow: 0 2px 10px rgba($dark-accent-primary, 0.2);
+    }
+    
+    .section-subtitle {
+      color: $dark-text-secondary;
+    }
+    
+    .about-text {
+      h3 {
+        color: $dark-accent-primary;
+      }
+      
+      p {
+        color: $dark-text-secondary;
+        line-height: 1.7;
+      }
+    }
+    
+    .about-features {
+      li {
+        color: $dark-text-secondary;
+        
+        &::before {
+          color: $dark-accent-success;
+        }
+      }
+    }
+  }
+  
+  // Play section
+  .play-section {
+    background: linear-gradient(135deg, #1a1f2e 0%, #2a3142 50%, #334155 100%) !important;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba($dark-accent-warning, 0.08), transparent 50%);
+      pointer-events: none;
+    }
+    
+    .download-btn {
+      background: rgba($dark-bg-primary, 0.9);
+      border: 1px solid rgba($dark-accent-primary, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: all $transition-normal;
+      
+      &:hover {
+        background: rgba($dark-bg-primary, 0.95);
+        border-color: rgba($dark-accent-primary, 0.4);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      }
+      
+      .download-text {
+        .download-platform {
+          color: $dark-accent-primary;
+          font-weight: 600;
+        }
+        
+        .download-subtitle {
+          color: $dark-text-muted;
+        }
+      }
+    }
+  }
+  
+  // Showcase section
+  .showcase-section {
+    background: linear-gradient(135deg, $dark-bg-tertiary 0%, $dark-bg-secondary 100%) !important;
+    color: $dark-text-primary;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 80% 20%, rgba($dark-accent-secondary, 0.06), transparent 50%);
+      pointer-events: none;
+    }
+    
+    .section-title {
+      color: $dark-accent-primary;
+      text-shadow: 0 2px 10px rgba($dark-accent-primary, 0.2);
+    }
+    
+    .section-subtitle {
+      color: $dark-text-secondary;
+    }
+    
+    .showcase-content {
+      h3 {
+        color: $dark-accent-primary;
+        text-shadow: 0 1px 5px rgba($dark-accent-primary, 0.2);
+      }
+      
+      p {
+        color: $dark-text-secondary;
+        line-height: 1.7;
+      }
+    }
+    
+    .showcase-item {
+      &::before {
+        background: linear-gradient(45deg, rgba($dark-accent-primary, 0.1), rgba($dark-accent-secondary, 0.1));
+      }
+    }
+  }
+  
+  // Contact section
+  .contact-section {
+    background: linear-gradient(135deg, #1a1f2e 0%, #2a3142 50%, #334155 100%) !important;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 80% 80%, rgba($dark-accent-danger, 0.05), transparent 50%);
+      pointer-events: none;
+    }
+    
+    .contact-info,
+    .press-info {
+      background: rgba($dark-bg-primary, 0.9);
+      border: 1px solid rgba($dark-accent-primary, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      
+      h3 {
+        color: $dark-accent-primary;
+        text-shadow: 0 1px 5px rgba($dark-accent-primary, 0.2);
+      }
+    }
+    
+    .contact-item {
+      .contact-details {
+        h4 {
+          color: $dark-accent-primary;
+        }
+        
+        p {
+          color: $dark-text-secondary;
+          
+          a {
+            color: $dark-accent-primary;
+            
+            &:hover {
+              color: $dark-accent-secondary;
+            }
+          }
+        }
+      }
+    }
+    
+    .press-info {
+      p {
+        color: $dark-text-secondary;
+        line-height: 1.7;
+      }
+    }
+    
+    .press-contact {
+      background: rgba($dark-accent-primary, 0.1);
+      border-left: 4px solid $dark-accent-primary;
+      
+      p {
+        strong {
+          color: $dark-accent-primary;
+        }
+        
+        a {
+          color: $dark-accent-primary;
+        }
+      }
+    }
+  }
+  
+  // Announcement archive page
+  .announcements-archive {
+    background: $dark-bg-primary;
+    
+    .archive-header {
+      .archive-title {
+        color: $dark-text-primary;
+      }
+      
+      .archive-description {
+        color: $dark-text-secondary;
+      }
+    }
+  }
+  
+  // Individual announcement page
+  .announcement-page {
+    background: $dark-bg-primary;
+    
+    .announcement-content {
+      .announcement-title {
+        color: $dark-text-primary;
+      }
+      
+      .announcement-meta {
+        color: $dark-text-muted;
+      }
+      
+      .announcement-body {
+        color: $dark-text-secondary;
+      }
+    }
+  }
+  
+  // Team section
+  .team-section {
+    background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #2a3142 100%) !important;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba($dark-accent-primary, 0.08), transparent 60%);
+      pointer-events: none;
+    }
+    
+    .team-intro {
+      background: rgba($dark-bg-primary, 0.3);
+      border: 1px solid rgba($dark-accent-primary, 0.2);
+      backdrop-filter: blur(10px);
+      
+      .team-intro-content {
+        h3 {
+          background: linear-gradient(45deg, $dark-text-primary, $dark-accent-primary, $dark-accent-secondary) !important;
+          -webkit-text-fill-color: transparent;
+          text-shadow: 0 2px 10px rgba($dark-accent-primary, 0.3);
+        }
+      }
+    }
+    
+    .team-card {
+      background: rgba($dark-bg-primary, 0.4) !important;
+      border: 1px solid rgba($dark-accent-primary, 0.15) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: all $transition-normal;
+      
+      &:hover {
+        background: rgba($dark-bg-primary, 0.6) !important;
+        border-color: rgba($dark-accent-primary, 0.3) !important;
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      }
+      
+      .team-name {
+        color: $dark-accent-primary;
+        font-weight: 600;
+      }
+      
+      .team-title {
+        color: $dark-text-muted;
+      }
+      
+      .team-social {
+        a {
+          background: rgba($dark-accent-primary, 0.1);
+          border: 1px solid rgba($dark-accent-primary, 0.2);
+          color: $dark-accent-primary;
+          transition: all $transition-fast;
+          
+          &:hover {
+            background: rgba($dark-accent-primary, 0.2);
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: 0 5px 15px rgba($dark-accent-primary, 0.3);
+          }
+        }
+      }
+    }
+  }
+  
+  // Team member page
+  .team-member-page {
+    background: $dark-bg-primary;
+    
+    .member-content {
+      .member-name {
+        color: $dark-text-primary;
+      }
+      
+      .member-role {
+        color: $dark-text-secondary;
+      }
+      
+      .member-bio {
+        color: $dark-text-secondary;
+      }
+    }
+  }
+  
+  // Force logo visibility in dark mode - highest specificity
+  .navbar .nav-container .nav-brand .nav-logo .nav-logo-text {
+    color: #ffffff !important;
+    background: transparent !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+    font-weight: 700 !important;
+  }
+  
+  .navbar .nav-container .nav-brand .nav-logo {
+    color: #ffffff !important;
+    background: transparent !important;
+  }
+} 

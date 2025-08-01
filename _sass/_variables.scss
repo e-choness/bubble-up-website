@@ -57,3 +57,30 @@ $border-radius-full: 50%;
 $transition-fast: 0.15s ease-in-out;
 $transition-normal: 0.3s ease-in-out;
 $transition-slow: 0.5s ease-in-out;
+
+// Dark mode colors - More harmonious and sophisticated
+$dark-bg-primary: #0f1419;
+$dark-bg-secondary: #1a1f2e;
+$dark-bg-tertiary: #2a3142;
+$dark-text-primary: #f8fafc;
+$dark-text-secondary: #cbd5e1;
+$dark-text-muted: #94a3b8;
+$dark-border: #334155;
+$dark-shadow: rgba(0, 0, 0, 0.4);
+
+// Dark mode accent colors - Softer and more harmonious
+$dark-accent-primary: #60a5fa;
+$dark-accent-secondary: #8b5cf6;
+$dark-accent-success: #10b981;
+$dark-accent-warning: #f59e0b;
+$dark-accent-danger: #ef4444;
+
+// Light mode colors (existing colors)
+$light-bg-primary: #ffffff;
+$light-bg-secondary: #f8f9fa;
+$light-bg-tertiary: #e9ecef;
+$light-text-primary: #333333;
+$light-text-secondary: #666666;
+$light-text-muted: #999999;
+$light-border: #dee2e6;
+$light-shadow: rgba(0, 0, 0, 0.1);
