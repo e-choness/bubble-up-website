@@ -53,28 +53,16 @@ defaults:
 
 # Custom settings
 social:
-  linktree: "https://linktr.ee/bubbleup"
-  steam: "https://store.steampowered.com/app/bubbleup"
-  instagram: "https://instagram.com/bubbleupgame"
-  youtube: "https://youtube.com/@bubbleupgame"
-  twitter: "https://twitter.com/bubbleupgame"
-  discord: "https://discord.gg/bubbleup"
-  linkedin: "https://linkedin.com/company/bubbleup"
-  patreon: "https://patreon.com/bubbleup"
-  bluesky: "https://bsky.app/profile/bubbleup.game"
+  linktree: "https://linktr.ee/bubbleupgame"
+  steam: "https://store.steampowered.com/app/3655340/Bubble_UP/"
+  instagram: "https://www.instagram.com/bubbleupgame"
+  youtube: "https://www.youtube.com/@BubbleUPGame"
+  twitter: "https://x.com/bubbleupgame"
+  discord: "https://discord.gg/DWadA9Npbp"
+  linkedin: "https://www.linkedin.com/company/bubbleupgame/"
+  patreon: "https://www.patreon.com/bubbleupgame"
+  bluesky: "https://bsky.app/profile/bubbleupgame.bsky.social"
 
-download_links:
-  android: "https://play.google.com/store/apps/details?id=com.bubbleup"
-  ios: "https://apps.apple.com/app/bubble-up/id123456789"
-  windows: "https://github.com/bubbleup/releases/latest/download/BubbleUp-Windows.exe"
-  mac: "https://github.com/bubbleup/releases/latest/download/BubbleUp-Mac.dmg"
-  linux: "https://github.com/bubbleup/releases/latest/download/BubbleUp-Linux.AppImage"
-
-contact:
-  address: "123 Game Street, Fun City, FC 12345"
-  phone: "+1 (555) 123-GAME"
-  email: "contact@bubbleupgame.com"
-  press_kit: "/assets/files/BubbleUp-PressKit.zip"
 
 # Exclude from processing
 exclude:
