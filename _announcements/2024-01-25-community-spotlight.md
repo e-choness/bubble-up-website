@@ -1,4 +1,5 @@
 ---
+layout: announcement
 title: "Community Spotlight: Player Creations"
 date: 2024-01-25
 image: "/assets/images/announcements/community-spotlight.jpg"

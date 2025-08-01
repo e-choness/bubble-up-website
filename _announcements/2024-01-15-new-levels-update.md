@@ -1,4 +1,5 @@
 ---
+layout: announcement
 title: "50 New Levels Released!"
 date: 2024-01-15
 image: "/assets/images/announcements/new-levels.jpg"

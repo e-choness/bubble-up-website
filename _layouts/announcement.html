@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<main class="announcement-page">
+    <div class="container">
+        <article class="announcement">
+            <header class="announcement-header">
+                {% if page.image %}
+                <div class="announcement-image">
+                    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="announcement-hero-image">
+                </div>
+                {% endif %}
+
+                <div class="announcement-info">
+                    <h1 class="announcement-title">{{ page.title }}</h1>
+                    <div class="announcement-meta">
+                        <time datetime="{{ page.date | date_to_xmlschema }}" class="announcement-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            {{ page.date | date: "%B %d, %Y" }}
+                        </time>
+                        {% if page.author %}
+                        <span class="announcement-author">
+                            <i class="fas fa-user"></i>
+                            {{ page.author }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    {% if page.excerpt %}
+                    <p class="announcement-excerpt">{{ page.excerpt }}</p>
+                    {% endif %}
+                </div>
+            </header>
+
+            <div class="announcement-content">
+                {{ content }}
+            </div>
+
+            <footer class="announcement-footer">
+                <div class="announcement-actions">
+                    <a href="/announcements/" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Announcements
+                    </a>
+                    <div class="announcement-share">
+                        <span class="share-label">Share:</span>
+                        <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url }}"
+                            class="social-icon" data-platform="twitter" target="_blank" rel="noopener">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
+                            class="social-icon" data-platform="facebook" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}"
+                            class="social-icon" data-platform="linkedin" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </div>
+</main>

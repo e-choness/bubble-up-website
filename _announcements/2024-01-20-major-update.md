@@ -1,4 +1,5 @@
 ---
+layout: announcement
 title: "Major Update: New Game Modes & Features!"
 date: 2024-01-20
 image: "/assets/images/announcements/major-update.jpg"
