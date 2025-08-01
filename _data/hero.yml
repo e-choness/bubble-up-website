@@ -4,8 +4,8 @@ title:
   image: "assets/images/logo.png"
 tagline: "Start Poppin'!"
 cta:
-  text: "Play Now"
-  link: "#play"
+  text: "Wishlist Now!"
+  link: "https://store.steampowered.com/app/3655340/Bubble_UP/"
 scroll_indicator:
   text: "Scroll Down"
 bubbles:
