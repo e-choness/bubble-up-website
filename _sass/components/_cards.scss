@@ -21,9 +21,14 @@
 }
 
 .announcement-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
   .announcement-image {
     height: 200px;
     overflow: hidden;
+    flex-shrink: 0;
     
     img {
       width: 100%;
@@ -39,6 +44,9 @@
   
   .announcement-content {
     padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
   
   .announcement-title {
@@ -59,11 +67,13 @@
     color: #666;
     margin-bottom: $spacing-md;
     line-height: 1.5;
+    flex-grow: 1;
   }
   
   .announcement-meta {
     font-size: $font-size-small;
     color: #999;
+    margin-top: auto;
     
     time {
       font-weight: 500;
