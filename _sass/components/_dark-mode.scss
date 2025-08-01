@@ -870,8 +870,6 @@
       
       .team-intro-content {
         h3 {
-          background: linear-gradient(45deg, $dark-text-primary, $dark-accent-primary, $dark-accent-secondary) !important;
-          -webkit-text-fill-color: transparent;
           text-shadow: 0 2px 10px rgba($dark-accent-primary, 0.3);
         }
       }
