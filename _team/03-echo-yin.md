@@ -15,6 +15,7 @@ Echo Yin serves as the Senior Generalist Engineer and Business Strategist, bring
 ## Key Highlights
 
 - **Senior Generalist Engineer & Business Strategist:** Combines technical development with strategic planning, as demonstrated by his dual roles at Bubble UP! and Froglet Games.
+- **Website Development:** Built the official Bubble UP! website, creating a public-facing platform for announcements, team showcases, and community engagement.
 - **Multiplayer and Online Systems:** As a key online developer for a multiplayer RPG at Brass Lion Entertainment, he implemented matchmaking systems, live-ops features, and essential online support for character creation.
 - **Workflow Optimization:** Developed a C# item migration tool that optimized item management by 96% and a server log tool that reduced bug reporting time by 95%, showcasing a talent for creating tools that dramatically improve efficiency.
 - **Full-Stack and Backend Expertise:** Has extensive experience in building robust backend systems, including user authentication, leaderboards, and in-game economies using C#, Azure PlayFab, and Firebase.
