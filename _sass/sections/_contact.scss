@@ -1,171 +1,188 @@
 // Contact section styles
 .contact-section {
-    background: linear-gradient(135deg, $warning-color 0%, lighten($accent-color, 10%) 100%);
+  background: linear-gradient(
+    135deg,
+    $warning-color 0%,
+    lighten($accent-color, 10%) 100%
+  );
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: $spacing-lg;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  @include tablet-up {
+    gap: $spacing-2xl;
   }
-  
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-lg;
-    
-    @include tablet-up {
-      gap: $spacing-2xl;
-    }
-    
-    @include desktop-up {
-      grid-template-columns: 1fr 1fr;
-    }
+
+  @include desktop-up {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
-  
-  .contact-info,
-  .press-info {
-    background: rgba(white, 0.95);
-    padding: $spacing-lg;
-    border-radius: $border-radius-xl;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(white, 0.2);
-    box-shadow: $shadow-lg;
-    
-    @include tablet-up {
-      padding: $spacing-2xl;
-    }
-    
-    h3 {
-      color: $primary-color;
-      font-size: $font-size-xl;
-      margin-bottom: $spacing-md;
-      font-weight: 600;
-      
-      @include tablet-up {
-        font-size: $font-size-2xl;
-        margin-bottom: $spacing-lg;
-      }
-    }
+}
+
+.contact-info,
+.press-info {
+  background: rgba(white, 0.95);
+  padding: $spacing-lg;
+  border-radius: $border-radius-xl;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(white, 0.2);
+  box-shadow: $shadow-lg;
+  min-width: 0; // allow grid items to shrink on small screens
+  overflow-wrap: anywhere; // prevent long strings (emails/links) from causing overflow
+
+  @include tablet-up {
+    padding: $spacing-2xl;
   }
-  
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
+
+  h3 {
+    color: $primary-color;
+    font-size: $font-size-xl;
     margin-bottom: $spacing-md;
-    
+    font-weight: 600;
+
     @include tablet-up {
+      font-size: $font-size-2xl;
       margin-bottom: $spacing-lg;
     }
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-    
-    .contact-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: $border-radius-md;
-      background: rgba($primary-color, 0.1);
-      margin-right: $spacing-md;
-      font-size: $font-size-large;
-      flex-shrink: 0;
-      
-      @include tablet-up {
-        width: 50px;
-        height: 50px;
-        font-size: $font-size-xl;
-        border-radius: $border-radius-lg;
-      }
-    }
-    
-    .contact-details {
-      flex: 1;
-      
-      h4 {
-        color: $primary-color;
-        font-size: $font-size-base;
-        margin-bottom: $spacing-xs;
-        font-weight: 600;
-        
-        @include tablet-up {
-          font-size: $font-size-large;
-        }
-      }
-      
-      p {
-        color: #555;
-        margin: 0;
-        
-        a {
-          color: $primary-color;
-          text-decoration: none;
-          font-weight: 500;
-          
-          &:hover {
-            color: $secondary-color;
-            text-decoration: underline;
-          }
-        }
-      }
+  }
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: $spacing-md;
+
+  @include tablet-up {
+    margin-bottom: $spacing-lg;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: $border-radius-md;
+    background: rgba($primary-color, 0.1);
+    margin-right: $spacing-md;
+    font-size: $font-size-large;
+    flex-shrink: 0;
+
+    @include tablet-up {
+      width: 50px;
+      height: 50px;
+      font-size: $font-size-xl;
+      border-radius: $border-radius-lg;
     }
   }
-  
-  .press-info {
+
+  .contact-details {
+    flex: 1;
+
+    h4 {
+      color: $primary-color;
+      font-size: $font-size-base;
+      margin-bottom: $spacing-xs;
+      font-weight: 600;
+
+      @include tablet-up {
+        font-size: $font-size-large;
+      }
+    }
+
     p {
       color: #555;
-      line-height: 1.6;
-      margin-bottom: $spacing-md;
-      
-      @include tablet-up {
-        margin-bottom: $spacing-lg;
-      }
-    }
-  }
-  
-  .press-kit-download {
-    margin-bottom: $spacing-md;
-    
-    @include tablet-up {
-      margin-bottom: $spacing-lg;
-    }
-    
-    .btn {
-      background: $gradient-primary;
-      color: white;
-      font-weight: 600;
-      box-shadow: $shadow-md;
-      
-      &:hover {
-        background: linear-gradient(135deg, lighten($primary-color, 10%), lighten($secondary-color, 10%));
-        transform: translateY(-2px);
-        box-shadow: $shadow-lg;
-      }
-    }
-  }
-  
-  .press-contact {
-    padding: $spacing-sm;
-    background: rgba($primary-color, 0.05);
-    border-radius: $border-radius-md;
-    border-left: 4px solid $primary-color;
-    
-    @include tablet-up {
-      padding: $spacing-md;
-    }
-    
-    p {
       margin: 0;
-      
-      strong {
-        color: $primary-color;
-      }
-      
+
       a {
         color: $primary-color;
         text-decoration: none;
         font-weight: 500;
-        
+        word-break: break-word;
+        overflow-wrap: anywhere;
+
         &:hover {
+          color: $secondary-color;
           text-decoration: underline;
         }
       }
     }
   }
+}
+
+.press-info {
+  p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+
+    @include tablet-up {
+      margin-bottom: $spacing-lg;
+    }
+  }
+}
+
+.press-kit-download {
+  margin-bottom: $spacing-md;
+
+  @include tablet-up {
+    margin-bottom: $spacing-lg;
+  }
+
+  .btn {
+    background: $gradient-primary;
+    color: white;
+    font-weight: 600;
+    box-shadow: $shadow-md;
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        lighten($primary-color, 10%),
+        lighten($secondary-color, 10%)
+      );
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+    }
+  }
+}
+
+.press-contact {
+  padding: $spacing-sm;
+  background: rgba($primary-color, 0.05);
+  border-radius: $border-radius-md;
+  border-left: 4px solid $primary-color;
+
+  @include tablet-up {
+    padding: $spacing-md;
+  }
+
+  p {
+    margin: 0;
+
+    strong {
+      color: $primary-color;
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: 500;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
