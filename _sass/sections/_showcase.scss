@@ -1,16 +1,16 @@
 // Showcase section styles
 .showcase-section {
-  background: linear-gradient(135deg, $pass-color 50%, $success-color 100%);
-    color: #333;
-    
-    .section-title {
-      color: $primary-color;
-    }
-    
-    .section-subtitle {
-      color: #666;
-    }
+  background: linear-gradient(135deg, #0d5b11, #69b41e); /* Smoother green gradient */
+  color: #f8f9fa; /* Light gray for general text */
+
+  .section-title {
+    color: #ffffff; /* White for titles */
   }
+
+  .section-subtitle {
+    color: #e9ecef; /* Lighter gray for subtitles */
+  }
+}
   
   .showcase-grid {
     max-width: 1200px;
@@ -24,6 +24,14 @@
     align-items: center;
     margin-bottom: $spacing-2xl * 1.5;
     
+    /* New styles for container */
+    background-color: rgba(white, 0.2); /* Slightly lighter green */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+    border-radius: $border-radius-lg; /* Rounded corners */
+    padding: $spacing-xl; /* Add some padding inside the container */
+    box-shadow: $shadow-md; /* Subtle shadow for depth */
+    backdrop-filter: blur(10px);
+
     @include desktop-up {
       grid-template-columns: 1fr 1fr;
     }
@@ -83,7 +91,7 @@
   
   .showcase-content {
     h3 {
-      color: $primary-color;
+      color: #ffffff; /* White for content headings */
       font-size: $font-size-2xl;
       margin-bottom: $spacing-md;
       font-weight: 600;
@@ -92,7 +100,7 @@
     p {
       font-size: $font-size-large;
       line-height: 1.7;
-      color: #555;
+      color: #e9ecef; /* Lighter gray for content paragraphs */
     }
   }
   
