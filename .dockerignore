@@ -1,0 +1,15 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.git/
+.gitignore
+.github/
+.bundle/
+vendor/
+backup/
+*.gem
+*.rbc
+.sassrc
+README.md
+docs/
