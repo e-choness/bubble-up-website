@@ -15,11 +15,36 @@ A playful, animated Website designed for the Bubble UP! game website. Features m
 
 ## 🛠️ Installation
 
+### Docker (recommended)
+
 1. Clone this repository:
 
 ```bash
 git clone https://github.com/e-choness/bubble-up-website.git
-cd bubbleup-jekyll-theme
+cd bubble-up-website
+```
+
+2. Build and start the container:
+
+```bash
+docker compose up -d
+```
+
+3. Visit `http://localhost:4000`
+
+The site auto-regenerates when you edit files. To stop:
+
+```bash
+docker compose down
+```
+
+### Local Ruby
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/e-choness/bubble-up-website.git
+cd bubble-up-website
 ```
 
 2. Install dependencies:
@@ -31,32 +56,34 @@ bundle install
 3. Build and serve the site:
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 ```
 
-4. Visit `http://localhost:4000` to see your site!
+4. Visit `http://localhost:4000`
 
 ## 📁 Structure
 
 ```bash
 bubble-up-website/
 ├── _config.yml          # Site configuration
+├── _config_dev.yml      # Development URL override (Docker)
 ├── _data/               # Data files
 ├── _includes/           # Reusable components
-│   ├── sections/        # Page sections
-│   └── footer.html      # Site footer
+│   └── sections/        # Page sections
 ├── _layouts/            # Page layouts
-├── _pages/              # Static pages
-├── _posts/              # Blog posts
+├── _sass/               # Sass stylesheets
 ├── _announcements/      # Game announcements
 ├── _team/               # Team member profiles
 ├── assets/
 │   ├── css/
 │   ├── js/
 │   │   ├── main.js      # Main functionality
-│   │   └── animations.js # GSAP animations
-│   ├── images/
-│   └── scss/            # Sass stylesheets
+│   │   ├── animations.js # GSAP animations
+│   │   ├── dark-mode.js  # Dark mode toggle
+│   │   └── navbar.js     # Navigation
+│   └── images/
+├── Dockerfile
+├── docker-compose.yml
 └── README.md
 ```
 
@@ -73,7 +100,7 @@ Edit `_config.yml` to customize:
 
 ### Colors and Styling
 
-Update `assets/scss/_variables.scss` to customize:
+Update `_sass/` files to customize:
 
 - Color palette
 - Typography
@@ -117,7 +144,7 @@ Team member bio...
 ### Adding New Sections
 
 1. Create a new section file in `_includes/sections/`
-2. Add corresponding SCSS in `assets/scss/sections/`
+2. Add corresponding SCSS in `_sass/`
 3. Include the section in your page layout
 4. Add animations in `assets/js/animations.js`
 
@@ -132,12 +159,12 @@ Edit `assets/js/animations.js` to:
 
 ### Styling Changes
 
-Update SCSS files in `assets/scss/`:
+Update Sass files in `_sass/`:
 
-- `_variables.scss` for colors and fonts
-- `components/` for UI components
-- `sections/` for page sections
-- `_base.scss` for global styles
+- Variables for colors and fonts
+- Component styles
+- Section layouts
+- Base global styles
 
 ## 📱 Responsive Design
 
@@ -151,30 +178,23 @@ The theme is fully responsive with breakpoints:
 
 ### Prerequisites
 
-- Ruby 2.7+
+- **Docker** (recommended) — no other dependencies needed
+- Ruby 3.2+ (for local development without Docker)
 - Jekyll 4.3+
-- Node.js (for asset compilation)
 
 ### Local Development
 
 ```bash
-# Install dependencies
-bundle install
+# Docker (recommended)
+docker compose up -d
 
-# Serve with live reload
+# Or local Ruby
+bundle install
 bundle exec jekyll serve --livereload
 
 # Build for production
 JEKYLL_ENV=production bundle exec jekyll build
 ```
-
-### Asset Compilation
-
-SCSS files are automatically compiled by Jekyll. For JavaScript:
-
-- `main.js` handles core functionality
-- `animations.js` manages GSAP animations
-- Both are included in the default layout
 
 ## 🚀 Deployment
 
